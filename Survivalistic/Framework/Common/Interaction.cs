@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using StardewModdingAPI;
 using StardewValley;
+using StardewValley.GameData.Objects;
+using StardewValley.ItemTypeDefinitions;
 using Survivalistic_Rebooted.Framework.Bars;
 using Survivalistic_Rebooted.Framework.Common.Affection;
 using Survivalistic_Rebooted.Framework.Databases;
+using SDVObject = StardewValley.Object;
 
 namespace Survivalistic_Rebooted.Framework.Common
 {
@@ -15,8 +18,6 @@ namespace Survivalistic_Rebooted.Framework.Common
 
         private static bool AlreadyUsingTool;
 
-        private static string ItemEatenName;
-
         private static string ToolUsedName;
 
         private static bool GettingTickInformation = true;
@@ -25,9 +26,9 @@ namespace Survivalistic_Rebooted.Framework.Common
         {
             if (!Context.IsWorldReady) return;
 
+            var eatenObject = (Game1.player.itemToEat as StardewValley.Object);
             if (Game1.player.isEating)
             {
-                ItemEatenName = Game1.player.itemToEat.Name;
                 AlreadyEating = true;
             }
             else
@@ -35,7 +36,7 @@ namespace Survivalistic_Rebooted.Framework.Common
                 if (AlreadyEating)
                 {
                     AlreadyEating = false;
-                    IncreaseStatus(ItemEatenName, Game1.player.itemToEat.staminaRecoveredOnConsumption());
+                    IncreaseStatus(eatenObject);
                 }
             }
         }
@@ -59,43 +60,54 @@ namespace Survivalistic_Rebooted.Framework.Common
             }
         }
 
-        private static void IncreaseStatus(string foodEaten, int recover)
+        private static void IncreaseStatus(SDVObject eatenFood)
         {
-            float lastHunger = ModEntry.Data.ActualHunger;
-            float lastThirst = ModEntry.Data.ActualThirst;
+            (float _hunger, float _thirst) lastValues = (ModEntry.Data.ActualHunger, ModEntry.Data.ActualThirst);
+            (int _hunger, int _thirst) restoreValues = (0, 0);
 
-            if (Foods.FoodDatabase.TryGetValue(foodEaten, out string foodStatusString))
+            if (Foods.FoodDatabase.TryGetValue(eatenFood.Name, out string foodStatusString))
             {
                 List<string> foodStatus = foodStatusString.Split('/').ToList();
-
-                if (ModEntry.Data.ActualHunger < ModEntry.Data.MaxHunger) ModEntry.Data.ActualHunger += Int32.Parse(foodStatus[0]);
-                if (ModEntry.Data.ActualThirst < ModEntry.Data.MaxThirst) ModEntry.Data.ActualThirst += Int32.Parse(foodStatus[1]);
-
-                BarsInformations.NormalizeStatus();
-
-                float hungerDiff = ModEntry.Data.ActualHunger - lastHunger;
-                float thirstDiff = ModEntry.Data.ActualThirst - lastThirst;
-
-                if (hungerDiff > 0) Game1.addHUDMessage(new HUDMessage(string.Format(ModEntry.Instance.Helper.Translation.Get("info-fullness"), (int)hungerDiff), 4));
-                if (thirstDiff > 0) Game1.addHUDMessage(new HUDMessage(string.Format(ModEntry.Instance.Helper.Translation.Get("info-thirsty"), (int)thirstDiff), 4));
+                restoreValues = (int.Parse(foodStatus[0]), int.Parse(foodStatus[1]));
             }
-
             else if (ModEntry.Config.NonSupportedFood)
             {
-                if (ModEntry.Data.ActualHunger < ModEntry.Data.MaxHunger) ModEntry.Data.ActualHunger += recover * new Random().Next(1, 3);
-                if (ModEntry.Data.ActualThirst < ModEntry.Data.MaxThirst) ModEntry.Data.ActualThirst += recover * new Random().Next(1, 3);
+                // TODO: Revamp this.
+                // Well, this is a temporary solution.
+                var isDrink = true;
 
-                BarsInformations.NormalizeStatus();
-
-                float hungerDiff = ModEntry.Data.ActualHunger - lastHunger;
-                float thirstDiff = ModEntry.Data.ActualThirst - lastThirst;
-
-                if (hungerDiff > 0) Game1.addHUDMessage(new HUDMessage(string.Format(ModEntry.Instance.Helper.Translation.Get("info-fullness"), (int)hungerDiff), 4));
-                if (thirstDiff > 0) Game1.addHUDMessage(new HUDMessage(string.Format(ModEntry.Instance.Helper.Translation.Get("info-thirsty"), (int)thirstDiff), 4));
+                if (isDrink) restoreValues._thirst = eatenFood.Edibility;
+                if (isDrink) restoreValues._hunger = eatenFood.Edibility;
             }
+
+            UpdateStats(restoreValues);
+            NotifyUserAboutStatsChange(lastValues);
 
             if (!Benefits.VerifyBenefits())
                 Penalty.VerifyPenalty();
+        }
+
+        private static void UpdateStats((int _hunger, int _thirst) restoreValues)
+        {
+            if (ModEntry.Data.ActualHunger < ModEntry.Data.MaxHunger) ModEntry.Data.ActualHunger += restoreValues._hunger;
+            if (ModEntry.Data.ActualThirst < ModEntry.Data.MaxThirst) ModEntry.Data.ActualThirst += restoreValues._thirst;
+
+            BarsInformations.NormalizeStatus();
+        }
+
+        private static void NotifyUserAboutStatsChange((float _hunger, float _thirst) lastValues)
+        {
+            (float _hunger, float _thirst) = (ModEntry.Data.ActualHunger - lastValues._hunger,
+                                              ModEntry.Data.ActualThirst - lastValues._thirst);
+
+            if (_hunger > 1 || _thirst > 1)
+            {
+                var messageTemplate = _hunger > 1 ? ModEntry.Instance.Helper.Translation.Get("info-fullness") :
+                                                    ModEntry.Instance.Helper.Translation.Get("info-thirsty");
+                var actualDiff = Math.Max(_hunger, _thirst);
+
+                Game1.addHUDMessage(new HUDMessage(string.Format(messageTemplate, actualDiff), 4));
+            }
         }
 
         private static void DecreaseStatus(string toolUsed)
