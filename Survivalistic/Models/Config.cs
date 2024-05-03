@@ -15,7 +15,15 @@
 
         // CUSTOM BARS AXIS (use "custom" in the pivot to use this)
         public int BarsCustomX { get; set; } = 0;
+
         public int BarsCustomY { get; set; } = 0;
+
+        // BAR COLORS
+        public bool UseDynamicHungerBarColor { get; set; } = true;
+
+        public bool UseDynamicThirstBarColor { get; set; } = true;
+
+        // GAMEPLAY SETTINGS
 
         public bool NonSupportedFood { get; set; }
 

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Framework.Common;
 using StardewModdingAPI;
 using StardewValley;
 using StardewValley.GameData.Objects;
@@ -91,8 +92,7 @@ namespace Survivalistic_Rebooted.Framework.Common
         {
             if (ModEntry.Data.ActualHunger < ModEntry.Data.MaxHunger) ModEntry.Data.ActualHunger += restoreValues._hunger;
             if (ModEntry.Data.ActualThirst < ModEntry.Data.MaxThirst) ModEntry.Data.ActualThirst += restoreValues._thirst;
-
-            BarsInformations.NormalizeStatus();
+            Helper.NormalizeStatus();
         }
 
         private static void NotifyUserAboutStatsChange((float _hunger, float _thirst) lastValues)
@@ -124,8 +124,7 @@ namespace Survivalistic_Rebooted.Framework.Common
 
                 if (!Benefits.VerifyBenefits())
                     Penalty.VerifyPenalty();
-
-                BarsInformations.NormalizeStatus();
+                Helper.NormalizeStatus();
                 BarsWarnings.VerifyStatus();
             }
         }

@@ -1,74 +1,52 @@
 ﻿using System;
+using Framework.Common;
 using Microsoft.Xna.Framework;
 
 namespace Survivalistic_Rebooted.Framework.Bars
 {
     public class BarsInformations
     {
-        public static float HungerPercentage;
+        public static float HungerPercentage { get; set; }
 
-        public static float ThirstPercentage;
+        public static float ThirstPercentage { get; set; }
 
-        public static Color HungerColor = new Color(1, .7f, 0);
+        private static Color _hungerBarColor = new(1, .7f, 0);
 
-        public static Color ThirstColor = new Color(0, .7f, 1);
+        private static Color _thirstBarColor = new(0, .7f, 1);
 
-        public static void ResetStatus()
-        {
-            ModEntry.Data.ActualHunger = ModEntry.Data.MaxHunger;
-            ModEntry.Data.ActualThirst = ModEntry.Data.MaxThirst;
-
-            BarsUpdate.CalculatePercentage();
-        }
-
-        public static void NormalizeStatus()
-        {
-            if (ModEntry.Data.ActualHunger < 0) ModEntry.Data.ActualHunger = 0;
-            if (ModEntry.Data.ActualThirst < 0) ModEntry.Data.ActualThirst = 0;
-
-            if (ModEntry.Data.ActualHunger > ModEntry.Data.MaxHunger) ModEntry.Data.ActualHunger = ModEntry.Data.MaxHunger;
-            if (ModEntry.Data.ActualThirst > ModEntry.Data.MaxThirst) ModEntry.Data.ActualThirst = ModEntry.Data.MaxThirst;
-
-            BarsUpdate.CalculatePercentage();
-        }
-
-        public static Color GetOffsetHungerColor()
+        public static Color GetHungerBarColorWithOffset()
         {
             double maxHunger = ModEntry.Data.MaxHunger * 1.0;
             double currentHunger = ModEntry.Data.ActualHunger * 1.0;
             double offset = currentHunger / maxHunger;
 
-            Color color = HungerColor;
-            try
+            Color color = _hungerBarColor;
+            if (ModEntry.Config.UseDynamicHungerBarColor)
             {
-                color = ApplyColorOffset(offset, color);
-            }
-            catch
-            {
-                NormalizeStatus();
-                color = ApplyColorOffset(offset, color);
+                unchecked
+                {
+                    color = ApplyColorOffset(offset, color);
+                }
             }
 
             return color;
         }
 
-        public static Color GetOffsetThirstyColor()
+        public static Color GetThirstBarColorWithOffset()
         {
-            NormalizeStatus();
+            Helper.NormalizeStatus();
 
             double maxThirsty = ModEntry.Data.MaxThirst * 1.0;
             double currentThirsty = ModEntry.Data.ActualThirst * 1.0;
             double offset = currentThirsty / maxThirsty;
 
-            Color color = ThirstColor;
-            try
+            Color color = _thirstBarColor;
+            if (ModEntry.Config.UseDynamicHungerBarColor)
             {
-                color = ApplyColorOffset(offset, color);
-            }
-            catch
-            {
-                NormalizeStatus();
-                color = ApplyColorOffset(offset, color);
+                unchecked
+                {
+                    color = ApplyColorOffset(offset, color);
+                }
             }
 
             return color;

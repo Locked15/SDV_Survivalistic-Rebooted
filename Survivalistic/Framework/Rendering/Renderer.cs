@@ -24,8 +24,8 @@ namespace Survivalistic_Rebooted.Framework.Rendering
             e.SpriteBatch.Draw(Textures.HungerSprite, new Rectangle((int)BarsPosition.barPosition.X, (int)BarsPosition.barPosition.Y - 240, Textures.HungerSprite.Width * 4, Textures.HungerSprite.Height * 4), Color.White);
             e.SpriteBatch.Draw(Textures.ThirstSprite, new Rectangle((int)BarsPosition.barPosition.X - 60, (int)BarsPosition.barPosition.Y - 240, Textures.ThirstSprite.Width * 4, Textures.ThirstSprite.Height * 4), Color.White);
 
-            e.SpriteBatch.Draw(Textures.HungerFiller, new Vector2(BarsPosition.barPosition.X + 36, BarsPosition.barPosition.Y - 25), new Rectangle(0, 0, Textures.HungerFiller.Width * 6 * Game1.pixelZoom, (int)BarsInformations.HungerPercentage), BarsInformations.GetOffsetHungerColor(), 3.138997f, new Vector2(0.5f, 0.5f), 1f, SpriteEffects.None, 1f);
-            e.SpriteBatch.Draw(Textures.ThirstFiller, new Vector2(BarsPosition.barPosition.X - 24, BarsPosition.barPosition.Y - 25), new Rectangle(0, 0, Textures.ThirstFiller.Width * 6 * Game1.pixelZoom, (int)BarsInformations.ThirstPercentage), BarsInformations.GetOffsetThirstyColor(), 3.138997f, new Vector2(0.5f, 0.5f), 1f, SpriteEffects.None, 1f);
+            e.SpriteBatch.Draw(Textures.HungerFiller, new Vector2(BarsPosition.barPosition.X + 36, BarsPosition.barPosition.Y - 25), new Rectangle(0, 0, Textures.HungerFiller.Width * 6 * Game1.pixelZoom, (int)BarsInformations.HungerPercentage), BarsInformations.GetHungerBarColorWithOffset(), 3.138997f, new Vector2(0.5f, 0.5f), 1f, SpriteEffects.None, 1f);
+            e.SpriteBatch.Draw(Textures.ThirstFiller, new Vector2(BarsPosition.barPosition.X - 24, BarsPosition.barPosition.Y - 25), new Rectangle(0, 0, Textures.ThirstFiller.Width * 6 * Game1.pixelZoom, (int)BarsInformations.ThirstPercentage), BarsInformations.GetThirstBarColorWithOffset(), 3.138997f, new Vector2(0.5f, 0.5f), 1f, SpriteEffects.None, 1f);
         
             if (BarsDatabase.RenderNumericalHunger)
             {
@@ -39,7 +39,7 @@ namespace Survivalistic_Rebooted.Framework.Rendering
                     Game1.dialogueFont,
                     information,
                     new Vector2(BarsPosition.barPosition.X + textPosition.X, BarsPosition.barPosition.Y - 240 + ((Textures.HungerSprite.Height * 4) / 4) + 8),
-                    BarsInformations.GetOffsetHungerColor(),
+                    BarsInformations.GetHungerBarColorWithOffset(),
                     0f,
                     new Vector2(textPosition.Y, 0),
                     1,
@@ -59,7 +59,7 @@ namespace Survivalistic_Rebooted.Framework.Rendering
                     Game1.dialogueFont,
                     information,
                     new Vector2(BarsPosition.barPosition.X - 60 + text_position.X, BarsPosition.barPosition.Y - 240 + ((Textures.HungerSprite.Height * 4) / 4) + 8),
-                    BarsInformations.GetOffsetThirstyColor(),
+                    BarsInformations.GetThirstBarColorWithOffset(),
                     0f,
                     new Vector2(text_position.Y, 0),
                     1,

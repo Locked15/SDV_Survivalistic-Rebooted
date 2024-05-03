@@ -19,7 +19,7 @@ namespace Survivalistic_Rebooted.Framework.Common
         {
             get
             {
-                Color color = BarsInformations.GetOffsetHungerColor();
+                Color color = BarsInformations.GetHungerBarColorWithOffset();
                 _hungerFiller.SetData(new[] { color });
 
                 return _hungerFiller;
@@ -35,7 +35,7 @@ namespace Survivalistic_Rebooted.Framework.Common
         {
             get
             {
-                Color color = BarsInformations.GetOffsetThirstyColor();
+                Color color = BarsInformations.GetThirstBarColorWithOffset();
                 _thirstFiller.SetData(new[] { color });
 
                 return _thirstFiller;
