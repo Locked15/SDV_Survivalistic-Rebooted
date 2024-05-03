@@ -71,7 +71,7 @@ namespace Survivalistic_Rebooted.Framework.Common
                 List<string> foodStatus = foodStatusString.Split('/').ToList();
                 restoreValues = (int.Parse(foodStatus[0]), int.Parse(foodStatus[1]));
             }
-            else if (ModEntry.Config.NonSupportedFood)
+            else if (ModEntry.Config.NonRecognizedFood)
             {
                 // TODO: Revamp this.
                 // Well, this is a temporary solution.
@@ -117,10 +117,10 @@ namespace Survivalistic_Rebooted.Framework.Common
                 List<string> toolStatus = toolStatusString.Split('/').ToList();
 
                 if (ModEntry.Data.ActualHunger >= 0) 
-                    ModEntry.Data.ActualHunger -= float.Parse(toolStatus[0]) * (BarsDatabase.ToolUseMultiplier * ModEntry.Config.HungerActionMultiplier);
+                    ModEntry.Data.ActualHunger -= float.Parse(toolStatus[0]) * (BarsDatabase.ToolUseMultiplier * ModEntry.Config.HungerOnActionMultiplier);
 
                 if (ModEntry.Data.ActualThirst >= 0) 
-                    ModEntry.Data.ActualThirst -= float.Parse(toolStatus[1]) * (BarsDatabase.ToolUseMultiplier * ModEntry.Config.ThirstActionMultiplier);
+                    ModEntry.Data.ActualThirst -= float.Parse(toolStatus[1]) * (BarsDatabase.ToolUseMultiplier * ModEntry.Config.ThirstOnActionMultiplier);
 
                 if (!Benefits.VerifyBenefits())
                     Penalty.VerifyPenalty();

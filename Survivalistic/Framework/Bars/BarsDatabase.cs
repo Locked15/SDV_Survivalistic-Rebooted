@@ -2,8 +2,8 @@
 {
     public static class BarsDatabase
     {
-        public static float HungerVelocity = ModEntry.Config.HungerMultiplier;
-        public static float ThirstVelocity = ModEntry.Config.ThirstMultiplier;
+        public static float HungerVelocity = ModEntry.Config.PassiveHungerMultiplier;
+        public static float ThirstVelocity = ModEntry.Config.PassiveThirstMultiplier;
 
         public static bool RenderNumericalHunger = false;
         public static bool RenderNumericalThirst = false;

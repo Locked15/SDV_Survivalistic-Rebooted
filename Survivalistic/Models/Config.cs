@@ -17,13 +17,13 @@ namespace Survivalistic_Rebooted.Models
         };
 
         // MULTIPLIERS
-        public float ThirstMultiplier { get; set; } = 0.5f;
+        public float PassiveHungerMultiplier { get; set; } = 1f;
 
-        public float HungerMultiplier { get; set; } = 1f;
+        public float PassiveThirstMultiplier { get; set; } = 0.5f;
 
-        public float HungerActionMultiplier { get; set; } = 1f;
+        public float HungerOnActionMultiplier { get; set; } = 1f;
 
-        public float ThirstActionMultiplier { get; set; } = 1f;
+        public float ThirstOnActionMultiplier { get; set; } = 1f;
 
         // BARS POSITION
         public string BarsPosition { get; set; } = PossibleBarLocations.First();
@@ -32,13 +32,13 @@ namespace Survivalistic_Rebooted.Models
 
         public int BarsCustomY { get; set; } = 0;
 
-        // BAR COLORS
+        // BARS COLOR
         public bool UseDynamicHungerBarColor { get; set; } = true;
 
         public bool UseDynamicThirstBarColor { get; set; } = true;
 
         // COMPATIBILITY SETTINGS
-        public bool NonSupportedFood { get; set; } = true;
+        public bool NonRecognizedFood { get; set; } = true;
 
         // GAMEPLAY SETTINGS
         public bool DecreaseValuesAfterSleep { get; set; }

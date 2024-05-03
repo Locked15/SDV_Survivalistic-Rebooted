@@ -21,7 +21,7 @@ namespace Survivalistic_Rebooted.Framework.Misc
             if (Context.IsMainPlayer)
             {
                 Data _data = Helper.Data.ReadSaveData<Data>($"{player_id}") ?? new Data();
-                float[] _multipliers = { ModEntry.Config.HungerMultiplier, ModEntry.Config.ThirstMultiplier };
+                float[] _multipliers = { ModEntry.Config.PassiveHungerMultiplier, ModEntry.Config.PassiveThirstMultiplier };
                 SyncBody _toSend = new SyncBody(_data, Foods.FoodDatabase, _multipliers);
 
                 Helper.Data.WriteSaveData($"{player_id}", _data);
@@ -44,7 +44,7 @@ namespace Survivalistic_Rebooted.Framework.Misc
                 foreach (Farmer farmer in Game1.getOnlineFarmers())
                 {
                     Data _data = Helper.Data.ReadSaveData<Data>($"{farmer.UniqueMultiplayerID}") ?? new Data();
-                    float[] _multipliers = { ModEntry.Config.HungerMultiplier, ModEntry.Config.ThirstMultiplier };
+                    float[] _multipliers = { ModEntry.Config.PassiveHungerMultiplier, ModEntry.Config.PassiveThirstMultiplier };
                     SyncBody _toSend = new SyncBody(_data, Foods.FoodDatabase, _multipliers);
 
                     Helper.Data.WriteSaveData($"{farmer.UniqueMultiplayerID}", _data);

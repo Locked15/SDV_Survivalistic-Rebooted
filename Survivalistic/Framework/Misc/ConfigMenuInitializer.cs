@@ -53,8 +53,8 @@ namespace Survivalistic_Rebooted.Framework.Misc
                 mod: _modManifest,
                 name: () => _helper.Translation.Get("Setting.Multiplier.PassiveHunger.Title"),
                 tooltip: () => _helper.Translation.Get("Setting.Multiplier.PassiveHunger.Description"),
-                getValue: () => ActualConfig.HungerMultiplier,
-                setValue: value => ActualConfig.HungerMultiplier = value,
+                getValue: () => ActualConfig.PassiveHungerMultiplier,
+                setValue: value => ActualConfig.PassiveHungerMultiplier = value,
                 min: 0.0F,
                 max: 5.0F
             );
@@ -63,8 +63,8 @@ namespace Survivalistic_Rebooted.Framework.Misc
                 mod: _modManifest,
                 name: () => _helper.Translation.Get("Setting.Multiplier.PassiveThirst.Title"),
                 tooltip: () => _helper.Translation.Get("Setting.Multiplier.PassiveThirst.Description"),
-                getValue: () => ActualConfig.ThirstMultiplier,
-                setValue: value => ActualConfig.ThirstMultiplier = value,
+                getValue: () => ActualConfig.PassiveThirstMultiplier,
+                setValue: value => ActualConfig.PassiveThirstMultiplier = value,
                 min: 0.0F,
                 max: 5.0F
             );
@@ -73,8 +73,8 @@ namespace Survivalistic_Rebooted.Framework.Misc
                 mod: _modManifest,
                 name: () => _helper.Translation.Get("Setting.Multiplier.HungerOnAction.Title"),
                 tooltip: () => _helper.Translation.Get("Setting.Multiplier.HungerOnAction.Description"),
-                getValue: () => ActualConfig.HungerActionMultiplier,
-                setValue: value => ActualConfig.HungerActionMultiplier = value,
+                getValue: () => ActualConfig.HungerOnActionMultiplier,
+                setValue: value => ActualConfig.HungerOnActionMultiplier = value,
                 min: 0.0F,
                 max: 5.0F
             );
@@ -83,8 +83,8 @@ namespace Survivalistic_Rebooted.Framework.Misc
                 mod: _modManifest,
                 name: () => _helper.Translation.Get("Setting.Multiplier.ThirstOnAction.Title"),
                 tooltip: () => _helper.Translation.Get("Setting.Multiplier.ThirstOnAction.Description"),
-                getValue: () => ActualConfig.ThirstActionMultiplier,
-                setValue: value => ActualConfig.ThirstActionMultiplier = value,
+                getValue: () => ActualConfig.ThirstOnActionMultiplier,
+                setValue: value => ActualConfig.ThirstOnActionMultiplier = value,
                 min: 0.0F,
                 max: 5.0F
             );
@@ -136,8 +136,8 @@ namespace Survivalistic_Rebooted.Framework.Misc
                 mod: _modManifest,
                 name: () => _helper.Translation.Get("Setting.Compatibility.NonRecognizedFood.Title"),
                 tooltip: () => _helper.Translation.Get("Setting.Compatibility.NonRecognizedFood.Description"),
-                getValue: () => ActualConfig.NonSupportedFood,
-                setValue: value => ActualConfig.NonSupportedFood = value
+                getValue: () => ActualConfig.NonRecognizedFood,
+                setValue: value => ActualConfig.NonRecognizedFood = value
             );
         }
 
