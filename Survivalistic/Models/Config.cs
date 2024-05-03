@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Survivalistic_Rebooted.Models
@@ -48,7 +49,7 @@ namespace Survivalistic_Rebooted.Models
         public int ThirstDecreaseAfterSleep { get; set; }
 
         // TOOLS CONSUMPTION RATE
-        public (float _hunger, float _thirst) AxeConsumption { get; set; } = (0.50F, 0.25F);
+        public Tuple<float, float> AxeConsumption { get; set; } = new(0.50F, 0.25F);
 
         public (float _hunger, float _thirst) PickAxeConsumption { get; set; } = (0.50F, 0.25F);
 

@@ -35,8 +35,10 @@ namespace Survivalistic_Rebooted.Framework.Misc
 
             AddMultiplierSettings();
             AddBarsPositioningSettings();
+            AddBarsColorSettings();
             AddCompatibilitySettings();
             AddGameplaySettings();
+            AddToolsConsumptionSettings();
 
             return true;
         }
@@ -124,6 +126,30 @@ namespace Survivalistic_Rebooted.Framework.Misc
             );
         }
 
+        private void AddBarsColorSettings()
+        {
+            _configMenu.AddSectionTitle(
+                mod: _modManifest,
+                text: () => _helper.Translation.Get("Setting.BarsColor.Title")
+            );
+
+            _configMenu.AddBoolOption(
+                mod: _modManifest,
+                name: () => _helper.Translation.Get("Setting.BarsColor.DynamicHungerColor.Title"),
+                tooltip: () => _helper.Translation.Get("Setting.BarsColor.DynamicHungerColor.Description"),
+                getValue: () => ActualConfig.UseDynamicHungerBarColor,
+                setValue: value => ActualConfig.UseDynamicHungerBarColor = value
+            );
+
+            _configMenu.AddBoolOption(
+                mod: _modManifest,
+                name: () => _helper.Translation.Get("Setting.BarsColor.DynamicThirstColor.Title"),
+                tooltip: () => _helper.Translation.Get("Setting.BarsColor.DynamicThirstColor.Description"),
+                getValue: () => ActualConfig.UseDynamicThirstBarColor,
+                setValue: value => ActualConfig.UseDynamicThirstBarColor = value
+            );
+        }
+
         private void AddCompatibilitySettings()
         {
             _configMenu.AddSectionTitle(
@@ -174,6 +200,24 @@ namespace Survivalistic_Rebooted.Framework.Misc
                 setValue: value => ActualConfig.ThirstDecreaseAfterSleep = value,
                 min: -100,
                 max: 100
+            );
+        }
+
+        private void AddToolsConsumptionSettings()
+        {
+            _configMenu.AddSectionTitle(
+                mod: _modManifest,
+                text: () => _helper.Translation.Get("Setting.ToolsConsumption.Title")
+            );
+
+            _configMenu.AddNumberOption(
+                mod: _modManifest,
+                name: () => _helper.Translation.Get("Setting.ToolsConsumption.Axe.Hunger"),
+                tooltip: () => _helper.Translation.Get("Setting.ToolsConsumption.Axe.Hunger.Description"),
+                getValue: () => ActualConfig.AxeConsumption.Item1,
+                setValue: value => ActualConfig.AxeConsumption.Item1 = value,
+                min: 0.0F,
+                max: 2.0F
             );
         }
     }

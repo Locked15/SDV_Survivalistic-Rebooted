@@ -6,6 +6,7 @@
 
 	<PropertyGroup>
 		<GamePath>D:\SteamLibrary\steamapps\common\Stardew Valley</GamePath>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 	</PropertyGroup>
 
 	<ItemGroup>
