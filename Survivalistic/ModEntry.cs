@@ -1,12 +1,12 @@
-﻿using StardewModdingAPI;
+﻿using Framework;
+using StardewModdingAPI;
 using StardewModdingAPI.Events;
+using Survivalistic_Rebooted.Framework;
 using Survivalistic_Rebooted.Framework.APIs;
 using Survivalistic_Rebooted.Framework.Bars;
 using Survivalistic_Rebooted.Framework.Common;
 using Survivalistic_Rebooted.Framework.Common.Affection;
 using Survivalistic_Rebooted.Framework.Databases;
-using Survivalistic_Rebooted.Framework.Networking;
-using Survivalistic_Rebooted.Framework.Rendering;
 using Survivalistic_Rebooted.Models;
 
 namespace Survivalistic_Rebooted

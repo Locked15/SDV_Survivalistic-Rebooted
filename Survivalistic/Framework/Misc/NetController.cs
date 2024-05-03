@@ -6,7 +6,7 @@ using Survivalistic_Rebooted.Framework.Common;
 using Survivalistic_Rebooted.Framework.Bars;
 using Survivalistic_Rebooted.Framework.Databases;
 
-namespace Survivalistic_Rebooted.Framework.Networking
+namespace Survivalistic_Rebooted.Framework.Misc
 {
     public class NetController
     {
@@ -45,7 +45,7 @@ namespace Survivalistic_Rebooted.Framework.Networking
                 {
                     Data _data = Helper.Data.ReadSaveData<Data>($"{farmer.UniqueMultiplayerID}") ?? new Data();
                     float[] _multipliers = { ModEntry.Config.HungerMultiplier, ModEntry.Config.ThirstMultiplier };
-                    SyncBody _toSend = new SyncBody(_data, Foods.FoodDatabase , _multipliers);
+                    SyncBody _toSend = new SyncBody(_data, Foods.FoodDatabase, _multipliers);
 
                     Helper.Data.WriteSaveData($"{farmer.UniqueMultiplayerID}", _data);
 

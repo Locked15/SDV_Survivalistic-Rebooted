@@ -2,7 +2,7 @@
 using StardewValley;
 using Survivalistic_Rebooted.Framework.Bars;
 using Survivalistic_Rebooted.Framework.Common.Effects;
-using Survivalistic_Rebooted.Framework.Networking;
+using Survivalistic_Rebooted.Framework.Misc;
 
 namespace Survivalistic_Rebooted.Framework.Common.Affection
 {
