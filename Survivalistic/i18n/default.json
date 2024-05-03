@@ -84,55 +84,57 @@
     // Tools Consumption Rate.
     "Setting.ToolsConsumption.Title": "Tools Consumption Rates",
 
-    "Setting.ToolsConsumption.Axe.Hunger": "Axe - Hunger",
+    "Setting.ToolsConsumption.Axe.Hunger.Title": "Axe - Hunger",
     "Setting.ToolsConsumption.Axe.Hunger.Description": "This option specifies accurate value of hunger which is used on single axe swing.",
 
-    "Setting.ToolsConsumption.Axe.Thirst": "Axe - Thirst",
+    "Setting.ToolsConsumption.Axe.Thirst.Title": "Axe - Thirst",
     "Setting.ToolsConsumption.Axe.Thirst.Description": "This option specifies accurate value of thirst which is used on single axe swing.",
 
-    "Setting.ToolsConsumption.Pickaxe.Hunger": "Pickaxe - Hunger",
+    "Setting.ToolsConsumption.Pickaxe.Hunger.Title": "Pickaxe - Hunger",
     "Setting.ToolsConsumption.Pickaxe.Hunger.Description": "This option specifies the accurate value of hunger used on a single pickaxe swing.",
 
-    "Setting.ToolsConsumption.Pickaxe.Thirst": "Pickaxe - Thirst",
+    "Setting.ToolsConsumption.Pickaxe.Thirst.Title": "Pickaxe - Thirst",
     "Setting.ToolsConsumption.Pickaxe.Thirst.Description": "This option specifies the accurate value of thirst used on a single pickaxe swing.",
 
-    "Setting.ToolsConsumption.Hoe.Hunger": "Hoe - Hunger",
+    "Setting.ToolsConsumption.Hoe.Hunger.Title": "Hoe - Hunger",
     "Setting.ToolsConsumption.Hoe.Hunger.Description": "This option specifies the accurate value of hunger used on a single hoe swing.",
 
-    "Setting.ToolsConsumption.Hoe.Thirst": "Hoe - Thirst",
+    "Setting.ToolsConsumption.Hoe.Thirst.Title": "Hoe - Thirst",
     "Setting.ToolsConsumption.Hoe.Thirst.Description": "This option specifies the accurate value of thirst used on a single hoe swing.",
 
-    "Setting.ToolsConsumption.Scythe.Hunger": "Scythe - Hunger",
+    "Setting.ToolsConsumption.Scythe.Hunger.Title": "Scythe - Hunger",
     "Setting.ToolsConsumption.Scythe.Hunger.Description": "This option specifies the accurate value of hunger used on a single scythe swing.",
 
-    "Setting.ToolsConsumption.Scythe.Thirst": "Scythe - Thirst",
+    "Setting.ToolsConsumption.Scythe.Thirst.Title": "Scythe - Thirst",
     "Setting.ToolsConsumption.Scythe.Thirst.Description": "This option specifies the accurate value of thirst used on a single scythe swing.",
 
-    "Setting.ToolsConsumption.FishingRod.Hunger": "Fishing Rod - Hunger",
+    "Setting.ToolsConsumption.FishingRod.Hunger.Title": "Fishing Rod - Hunger",
     "Setting.ToolsConsumption.FishingRod.Hunger.Description": "This option specifies the accurate value of hunger used on a single cast of the fishing rod.",
 
-    "Setting.ToolsConsumption.FishingRod.Thirst": "Fishing Rod - Thirst",
+    "Setting.ToolsConsumption.FishingRod.Thirst.Title": "Fishing Rod - Thirst",
     "Setting.ToolsConsumption.FishingRod.Thirst.Description": "This option specifies the accurate value of thirst used on a single cast of the fishing rod.",
 
-    "Setting.ToolsConsumption.WateringCan.Hunger": "Watering Can - Hunger",
+    "Setting.ToolsConsumption.WateringCan.Hunger.Title": "Watering Can - Hunger",
     "Setting.ToolsConsumption.WateringCan.Hunger.Description": "This option specifies the accurate value of hunger used on a single use of the watering can.",
 
-    "Setting.ToolsConsumption.WateringCan.Thirst": "Watering Can - Thirst",
+    "Setting.ToolsConsumption.WateringCan.Thirst.Title": "Watering Can - Thirst",
     "Setting.ToolsConsumption.WateringCan.Thirst.Description": "This option specifies the accurate value of thirst used on a single use of the watering can.",
 
-    "Setting.ToolsConsumption.Shears.Hunger": "Shears - Hunger",
+    "Setting.ToolsConsumption.Shears.Hunger.Title": "Shears - Hunger",
     "Setting.ToolsConsumption.Shears.Hunger.Description": "This option specifies the accurate value of hunger used on a single use of the shears.",
 
-    "Setting.ToolsConsumption.Shears.Thirst": "Shears - Thirst",
+    "Setting.ToolsConsumption.Shears.Thirst.Title": "Shears - Thirst",
     "Setting.ToolsConsumption.Shears.Thirst.Description": "This option specifies the accurate value of thirst used on a single use of the shears.",
 
-    "Setting.ToolsConsumption.MilkPail.Hunger": "Milk Pail - Hunger",
+    "Setting.ToolsConsumption.MilkPail.Hunger.Title": "Milk Pail - Hunger",
     "Setting.ToolsConsumption.MilkPail.Hunger.Description": "This option specifies the accurate value of hunger used on a single use of the milk pail.",
 
-    "Setting.ToolsConsumption.MilkPail.Thirst": "Milk Pail - Thirst",
+    "Setting.ToolsConsumption.MilkPail.Thirst.Title": "Milk Pail - Thirst",
     "Setting.ToolsConsumption.MilkPail.Thirst.Description": "This option specifies the accurate value of thirst used on a single use of the milk pail.",
 
     // Miscellaneous.
+    "Setting.Miscellaneous.Title": "Miscellaneous",
+
     "Setting.Miscellaneous.ShowPopUpMessages.Title": "Show Pop-Up Messages",
     "Setting.Miscellaneous.ShowPopUpMessages.Description": "With this option set to 'False' mod will stop to render pop-up's message boxes with restoration values of consumable meals."
 }

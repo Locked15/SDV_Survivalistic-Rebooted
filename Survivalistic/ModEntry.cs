@@ -6,7 +6,7 @@ using Survivalistic_Rebooted.Framework.Common;
 using Survivalistic_Rebooted.Framework.Common.Affection;
 using Survivalistic_Rebooted.Framework.Databases;
 using Survivalistic_Rebooted.Framework.Misc;
-using Survivalistic_Rebooted.Models;
+using Survivalistic_Rebooted.Models.Config;
 
 namespace Survivalistic_Rebooted
 {

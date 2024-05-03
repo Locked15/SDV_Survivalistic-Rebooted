@@ -13,50 +13,50 @@ namespace Survivalistic_Rebooted.Framework.Databases
                 { 
                     "Axe", 
                     NormalizeConsumptionString(string.Format(ToolConsumptionDetailStringTemplate,
-                                                             ModEntry.Config.AxeConsumption._hunger,
-                                                             ModEntry.Config.AxeConsumption._thirst)) 
+                                                             ModEntry.Config.AxeConsumption.Hunger,
+                                                             ModEntry.Config.AxeConsumption.Thirst)) 
                 },
                 { 
                     "Pickaxe",
                     NormalizeConsumptionString(string.Format(ToolConsumptionDetailStringTemplate,
-                                                             ModEntry.Config.PickAxeConsumption._hunger,
-                                                             ModEntry.Config.PickAxeConsumption._thirst))
+                                                             ModEntry.Config.PickAxeConsumption.Hunger,
+                                                             ModEntry.Config.PickAxeConsumption.Thirst))
                 },
                 { 
                     "Hoe",
                     NormalizeConsumptionString(string.Format(ToolConsumptionDetailStringTemplate,
-                                                             ModEntry.Config.HoeConsumption._hunger,
-                                                             ModEntry.Config.HoeConsumption._thirst))
+                                                             ModEntry.Config.HoeConsumption.Hunger,
+                                                             ModEntry.Config.HoeConsumption.Thirst))
                 },
                 { 
                     "Scythe",
                     NormalizeConsumptionString(string.Format(ToolConsumptionDetailStringTemplate,
-                                                             ModEntry.Config.HoeConsumption._hunger,
-                                                             ModEntry.Config.HoeConsumption._thirst))
+                                                             ModEntry.Config.HoeConsumption.Hunger,
+                                                             ModEntry.Config.HoeConsumption.Thirst))
                 },
                 { 
                     "Fishing Rod",
                     NormalizeConsumptionString(string.Format(ToolConsumptionDetailStringTemplate,
-                                                             ModEntry.Config.FishingRodConsumption._hunger,
-                                                             ModEntry.Config.FishingRodConsumption._thirst))
+                                                             ModEntry.Config.FishingRodConsumption.Hunger,
+                                                             ModEntry.Config.FishingRodConsumption.Thirst))
                 },
                 { 
                     "Watering Can",
                     NormalizeConsumptionString(string.Format(ToolConsumptionDetailStringTemplate,
-                                                             ModEntry.Config.WateringCanConsumption._hunger,
-                                                             ModEntry.Config.WateringCanConsumption._thirst))
+                                                             ModEntry.Config.WateringCanConsumption.Hunger,
+                                                             ModEntry.Config.WateringCanConsumption.Thirst))
                 },
                 { 
                     "Shears",
                     NormalizeConsumptionString(string.Format(ToolConsumptionDetailStringTemplate,
-                                                             ModEntry.Config.ShearsConsumption._hunger,
-                                                             ModEntry.Config.ShearsConsumption._thirst))
+                                                             ModEntry.Config.ShearsConsumption.Hunger,
+                                                             ModEntry.Config.ShearsConsumption.Thirst))
                 },
                 { 
                     "Milk Pail",
                     NormalizeConsumptionString(string.Format(ToolConsumptionDetailStringTemplate,
-                                                             ModEntry.Config.MilkPailConsumption._hunger,
-                                                             ModEntry.Config.MilkPailConsumption._thirst))
+                                                             ModEntry.Config.MilkPailConsumption.Hunger,
+                                                             ModEntry.Config.MilkPailConsumption.Thirst))
                 }
             };
         }

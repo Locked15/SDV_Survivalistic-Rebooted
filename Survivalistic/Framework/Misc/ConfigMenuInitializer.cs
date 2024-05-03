@@ -1,6 +1,6 @@
 ﻿using StardewModdingAPI;
 using Survivalistic_Rebooted.Framework.APIs;
-using Survivalistic_Rebooted.Models;
+using Survivalistic_Rebooted.Models.Config;
 
 namespace Survivalistic_Rebooted.Framework.Misc
 {
@@ -39,6 +39,7 @@ namespace Survivalistic_Rebooted.Framework.Misc
             AddCompatibilitySettings();
             AddGameplaySettings();
             AddToolsConsumptionSettings();
+            AddMiscellaneousSettings();
 
             return true;
         }
@@ -210,14 +211,188 @@ namespace Survivalistic_Rebooted.Framework.Misc
                 text: () => _helper.Translation.Get("Setting.ToolsConsumption.Title")
             );
 
+            // Axe:
             _configMenu.AddNumberOption(
                 mod: _modManifest,
-                name: () => _helper.Translation.Get("Setting.ToolsConsumption.Axe.Hunger"),
+                name: () => _helper.Translation.Get("Setting.ToolsConsumption.Axe.Hunger.Title"),
                 tooltip: () => _helper.Translation.Get("Setting.ToolsConsumption.Axe.Hunger.Description"),
-                getValue: () => ActualConfig.AxeConsumption.Item1,
-                setValue: value => ActualConfig.AxeConsumption.Item1 = value,
+                getValue: () => ActualConfig.AxeConsumption.Hunger,
+                setValue: value => ActualConfig.AxeConsumption.Hunger = value,
                 min: 0.0F,
                 max: 2.0F
+            );
+
+            _configMenu.AddNumberOption(
+                mod: _modManifest,
+                name: () => _helper.Translation.Get("Setting.ToolsConsumption.Axe.Thirst.Title"),
+                tooltip: () => _helper.Translation.Get("Setting.ToolsConsumption.Axe.Thirst.Description"),
+                getValue: () => ActualConfig.AxeConsumption.Thirst,
+                setValue: value => ActualConfig.AxeConsumption.Thirst = value,
+                min: 0.0F,
+                max: 2.0F
+            );
+
+            // Pickaxe:
+            _configMenu.AddNumberOption(
+                mod: _modManifest,
+                name: () => _helper.Translation.Get("Setting.ToolsConsumption.Pickaxe.Hunger.Title"),
+                tooltip: () => _helper.Translation.Get("Setting.ToolsConsumption.Pickaxe.Hunger.Description"),
+                getValue: () => ActualConfig.PickAxeConsumption.Hunger,
+                setValue: value => ActualConfig.PickAxeConsumption.Hunger = value,
+                min: 0.0F,
+                max: 2.0F
+            );
+
+            _configMenu.AddNumberOption(
+                mod: _modManifest,
+                name: () => _helper.Translation.Get("Setting.ToolsConsumption.Pickaxe.Thirst.Title"),
+                tooltip: () => _helper.Translation.Get("Setting.ToolsConsumption.Pickaxe.Thirst.Description"),
+                getValue: () => ActualConfig.PickAxeConsumption.Thirst,
+                setValue: value => ActualConfig.PickAxeConsumption.Thirst = value,
+                min: 0.0F,
+                max: 2.0F
+            );
+
+            // Hoe:
+            _configMenu.AddNumberOption(
+                mod: _modManifest,
+                name: () => _helper.Translation.Get("Setting.ToolsConsumption.Hoe.Hunger.Title"),
+                tooltip: () => _helper.Translation.Get("Setting.ToolsConsumption.Hoe.Hunger.Description"),
+                getValue: () => ActualConfig.HoeConsumption.Hunger,
+                setValue: value => ActualConfig.HoeConsumption.Hunger = value,
+                min: 0.0F,
+                max: 2.0F
+            );
+
+            _configMenu.AddNumberOption(
+                mod: _modManifest,
+                name: () => _helper.Translation.Get("Setting.ToolsConsumption.Hoe.Thirst.Title"),
+                tooltip: () => _helper.Translation.Get("Setting.ToolsConsumption.Hoe.Thirst.Description"),
+                getValue: () => ActualConfig.HoeConsumption.Thirst,
+                setValue: value => ActualConfig.HoeConsumption.Thirst = value,
+                min: 0.0F,
+                max: 2.0F
+            );
+
+            // Scythe:
+            _configMenu.AddNumberOption(
+                mod: _modManifest,
+                name: () => _helper.Translation.Get("Setting.ToolsConsumption.Scythe.Hunger.Title"),
+                tooltip: () => _helper.Translation.Get("Setting.ToolsConsumption.Scythe.Hunger.Description"),
+                getValue: () => ActualConfig.ScytheConsumption.Hunger,
+                setValue: value => ActualConfig.ScytheConsumption.Hunger = value,
+                min: 0.0F,
+                max: 2.0F
+            );
+
+            _configMenu.AddNumberOption(
+                mod: _modManifest,
+                name: () => _helper.Translation.Get("Setting.ToolsConsumption.Scythe.Thirst.Title"),
+                tooltip: () => _helper.Translation.Get("Setting.ToolsConsumption.Scythe.Thirst.Description"),
+                getValue: () => ActualConfig.ScytheConsumption.Thirst,
+                setValue: value => ActualConfig.ScytheConsumption.Thirst = value,
+                min: 0.0F,
+                max: 2.0F
+            );
+
+            // Fishing Rod:
+            _configMenu.AddNumberOption(
+                mod: _modManifest,
+                name: () => _helper.Translation.Get("Setting.ToolsConsumption.FishingRod.Hunger.Title"),
+                tooltip: () => _helper.Translation.Get("Setting.ToolsConsumption.FishingRod.Hunger.Description"),
+                getValue: () => ActualConfig.FishingRodConsumption.Hunger,
+                setValue: value => ActualConfig.FishingRodConsumption.Hunger = value,
+                min: 0.0F,
+                max: 2.0F
+            );
+
+            _configMenu.AddNumberOption(
+                mod: _modManifest,
+                name: () => _helper.Translation.Get("Setting.ToolsConsumption.FishingRod.Thirst.Title"),
+                tooltip: () => _helper.Translation.Get("Setting.ToolsConsumption.FishingRod.Thirst.Description"),
+                getValue: () => ActualConfig.FishingRodConsumption.Thirst,
+                setValue: value => ActualConfig.FishingRodConsumption.Thirst = value,
+                min: 0.0F,
+                max: 2.0F
+            );
+
+            // Watering Can:
+            _configMenu.AddNumberOption(
+                mod: _modManifest,
+                name: () => _helper.Translation.Get("Setting.ToolsConsumption.WateringCan.Hunger.Title"),
+                tooltip: () => _helper.Translation.Get("Setting.ToolsConsumption.WateringCan.Hunger.Description"),
+                getValue: () => ActualConfig.WateringCanConsumption.Hunger,
+                setValue: value => ActualConfig.WateringCanConsumption.Hunger = value,
+                min: 0.0F,
+                max: 2.0F
+            );
+
+            _configMenu.AddNumberOption(
+                mod: _modManifest,
+                name: () => _helper.Translation.Get("Setting.ToolsConsumption.WateringCan.Thirst.Title"),
+                tooltip: () => _helper.Translation.Get("Setting.ToolsConsumption.WateringCan.Thirst.Description"),
+                getValue: () => ActualConfig.WateringCanConsumption.Thirst,
+                setValue: value => ActualConfig.WateringCanConsumption.Thirst = value,
+                min: 0.0F,
+                max: 2.0F
+            );
+
+            // Shears:
+            _configMenu.AddNumberOption(
+                mod: _modManifest,
+                name: () => _helper.Translation.Get("Setting.ToolsConsumption.Shears.Hunger.Title"),
+                tooltip: () => _helper.Translation.Get("Setting.ToolsConsumption.Shears.Hunger.Description"),
+                getValue: () => ActualConfig.ShearsConsumption.Hunger,
+                setValue: value => ActualConfig.ShearsConsumption.Hunger = value,
+                min: 0.0F,
+                max: 2.0F
+            );
+
+            _configMenu.AddNumberOption(
+                mod: _modManifest,
+                name: () => _helper.Translation.Get("Setting.ToolsConsumption.Shears.Thirst.Title"),
+                tooltip: () => _helper.Translation.Get("Setting.ToolsConsumption.Shears.Thirst.Description"),
+                getValue: () => ActualConfig.ShearsConsumption.Thirst,
+                setValue: value => ActualConfig.ShearsConsumption.Thirst = value,
+                min: 0.0F,
+                max: 2.0F
+            );
+
+            // Milk Pail:
+            _configMenu.AddNumberOption(
+                mod: _modManifest,
+                name: () => _helper.Translation.Get("Setting.ToolsConsumption.MilkPail.Hunger.Title"),
+                tooltip: () => _helper.Translation.Get("Setting.ToolsConsumption.MilkPail.Hunger.Description"),
+                getValue: () => ActualConfig.MilkPailConsumption.Hunger,
+                setValue: value => ActualConfig.MilkPailConsumption.Hunger = value,
+                min: 0.0F,
+                max: 2.0F
+            );
+
+            _configMenu.AddNumberOption(
+                mod: _modManifest,
+                name: () => _helper.Translation.Get("Setting.ToolsConsumption.MilkPail.Thirst.Title"),
+                tooltip: () => _helper.Translation.Get("Setting.ToolsConsumption.MilkPail.Thirst.Description"),
+                getValue: () => ActualConfig.MilkPailConsumption.Thirst,
+                setValue: value => ActualConfig.MilkPailConsumption.Thirst = value,
+                min: 0.0F,
+                max: 2.0F
+            );
+        }
+
+        private void AddMiscellaneousSettings()
+        {
+            _configMenu.AddSectionTitle(
+                mod: _modManifest,
+                text: () => _helper.Translation.Get("Setting.Miscellaneous.Title")
+            );
+
+            _configMenu.AddBoolOption(
+                mod: _modManifest,
+                name: () => _helper.Translation.Get("Setting.Miscellaneous.ShowPopUpMessages.Title"),
+                tooltip: () => _helper.Translation.Get("Setting.Miscellaneous.ShowPopUpMessages.Description"),
+                getValue: () => ActualConfig.ShowPopUpWithRestorationValues,
+                setValue: value => ActualConfig.ShowPopUpWithRestorationValues = value
             );
         }
     }

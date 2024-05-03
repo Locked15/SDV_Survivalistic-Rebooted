@@ -4,8 +4,6 @@ using System.Linq;
 using Framework.Common;
 using StardewModdingAPI;
 using StardewValley;
-using StardewValley.GameData.Objects;
-using StardewValley.ItemTypeDefinitions;
 using Survivalistic_Rebooted.Framework.Bars;
 using Survivalistic_Rebooted.Framework.Common.Affection;
 using Survivalistic_Rebooted.Framework.Databases;

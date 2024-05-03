@@ -1,12 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Survivalistic_Rebooted.Models.Config
+﻿namespace Survivalistic_Rebooted.Models.Config
 {
-    internal class Consumption
+    public class Consumption
     {
+        public float Hunger { get; set; }
+
+        public float Thirst { get; set; }
+
+        public Consumption(float hunger, float thirst)
+        {
+            Hunger = hunger;
+            Thirst = thirst;
+        }
+
+        public static implicit operator Consumption((float, float) values)
+        {
+            return new(values.Item1, values.Item2);
+        } 
     }
 }
