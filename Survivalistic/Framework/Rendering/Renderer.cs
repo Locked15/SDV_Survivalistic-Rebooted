@@ -67,7 +67,7 @@ namespace Survivalistic_Rebooted.Framework.Rendering
                     0f);
             }
 
-            if (Game1.player.ActiveObject != null)
+            if (ModEntry.Config.ShowPopUpWithRestorationValues && Game1.player.ActiveObject != null)
             {
                 if (Foods.FoodDatabase.TryGetValue(Game1.player.ActiveObject.Name, out string food_status_string))
                 {

@@ -10,10 +10,9 @@
 
         public float ThirstActionMultiplier { get; set; } = 1f;
 
-        // BARS PIVOT
+        // BARS POSITION
         public string BarsPosition { get; set; } = "bottom-right";
 
-        // CUSTOM BARS AXIS (use "custom" in the pivot to use this)
         public int BarsCustomX { get; set; } = 0;
 
         public int BarsCustomY { get; set; } = 0;
@@ -32,5 +31,9 @@
         public int FoodDecreaseAfterSleep { get; set; }
 
         public int ThirstDecreaseAfterSleep { get; set; }
+
+        // MISCELLANEOUS
+
+        public bool ShowPopUpWithRestorationValues { get; set; } = true;
     }
 }
