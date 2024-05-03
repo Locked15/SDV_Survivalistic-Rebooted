@@ -1,6 +1,6 @@
-﻿using System;
-using Framework.Common;
+﻿using Framework.Common;
 using Microsoft.Xna.Framework;
+using System;
 
 namespace Survivalistic_Rebooted.Framework.Bars
 {

@@ -1,6 +1,4 @@
-﻿using System.Text.Json.Serialization;
-
-namespace Survivalistic_Rebooted.Framework.Databases
+﻿namespace Survivalistic_Rebooted.Framework.Databases
 {
     class EdiblesDB
     {

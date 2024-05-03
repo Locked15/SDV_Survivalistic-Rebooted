@@ -1,6 +1,6 @@
-﻿using StardewValley;
+﻿using Microsoft.Xna.Framework;
 using StardewModdingAPI;
-using Microsoft.Xna.Framework;
+using StardewValley;
 
 namespace Survivalistic_Rebooted.Framework.Bars
 {
@@ -105,7 +105,7 @@ namespace Survivalistic_Rebooted.Framework.Bars
                             Game1.showingHealth;
 
         private static bool CheckCavernLevelIsVisible(string locationName) =>
-                            _currentLocation.Contains("UndergroundMine") || _currentLocation.Contains("SkullCavern") || 
+                            _currentLocation.Contains("UndergroundMine") || _currentLocation.Contains("SkullCavern") ||
                             (_currentLocation.Contains("VolcanoDungeon") && _currentLocation != "VolcanoDungeon0");
     }
 }

@@ -14,7 +14,7 @@ namespace Survivalistic_Rebooted.Assets
 
         public static string GetDatabaseAssetsFolderPath(bool toTheCustomEdibles = false)
         {
-            return Path.Combine(AssetFolderName, EdiblesDBConstants.EdiblesDBAssetsFolderName, 
+            return Path.Combine(AssetFolderName, EdiblesDBConstants.EdiblesDBAssetsFolderName,
                                 toTheCustomEdibles ? EdiblesDBConstants.CustomEdiblesDBFolderName : string.Empty);
         }
 

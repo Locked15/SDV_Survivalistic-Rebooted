@@ -1,12 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using Framework.Common;
 using StardewModdingAPI;
 using StardewValley;
 using Survivalistic_Rebooted.Framework.Bars;
 using Survivalistic_Rebooted.Framework.Common.Affection;
 using Survivalistic_Rebooted.Framework.Databases;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using SDVObject = StardewValley.Object;
 
 namespace Survivalistic_Rebooted.Framework.Common
@@ -114,10 +114,10 @@ namespace Survivalistic_Rebooted.Framework.Common
             {
                 List<string> toolStatus = toolStatusString.Split('/').ToList();
 
-                if (ModEntry.Data.ActualHunger >= 0) 
+                if (ModEntry.Data.ActualHunger >= 0)
                     ModEntry.Data.ActualHunger -= float.Parse(toolStatus[0]) * (BarsDatabase.ToolUseMultiplier * ModEntry.Config.HungerOnActionMultiplier);
 
-                if (ModEntry.Data.ActualThirst >= 0) 
+                if (ModEntry.Data.ActualThirst >= 0)
                     ModEntry.Data.ActualThirst -= float.Parse(toolStatus[1]) * (BarsDatabase.ToolUseMultiplier * ModEntry.Config.ThirstOnActionMultiplier);
 
                 if (!Benefits.VerifyBenefits())

@@ -28,7 +28,7 @@ namespace Survivalistic_Rebooted.Framework.Common.Affection
                 result = ModEntry.Data.ActualHunger > 30;
                 Buffs.CallUpdateSettingBuff(BuffsHelper.GetBuffIDByCode(Models.SurvivalisticBuffs.Codes.FullnessBuff), true);
             }
-            
+
             return result;
         }
 

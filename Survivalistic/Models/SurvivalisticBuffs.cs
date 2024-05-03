@@ -56,7 +56,7 @@ namespace Survivalistic_Rebooted.Models
                 },
                 // Thirst DeBuff.
                 new(string.Format(Names.BuffIDTemplate, Names.ThirstDeBuff), "food",
-                    duration: Buff.ENDLESS, 
+                    duration: Buff.ENDLESS,
                     effects: new StardewValley.Buffs.BuffEffects()
                     {
                         MaxStamina = { -30 },

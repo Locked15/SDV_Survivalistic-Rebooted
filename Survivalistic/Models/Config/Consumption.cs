@@ -15,6 +15,6 @@
         public static implicit operator Consumption((float, float) values)
         {
             return new(values.Item1, values.Item2);
-        } 
+        }
     }
 }
