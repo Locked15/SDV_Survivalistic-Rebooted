@@ -18,7 +18,7 @@ namespace Survivalistic_Rebooted.Assets
                                 toTheCustomEdibles ? EdiblesDBConstants.CustomEdiblesDBFolderName : string.Empty);
         }
 
-        public static (string author, string identifier) SplitModUniqueIDToAuthorAndIdentifier(string modID)
+        public static (string _author, string _identifier) SplitModUniqueIDToAuthorAndIdentifier(string modID)
         {
             var result = modID.Split('.', 2);
             return (result.FirstOrDefault(), result.ElementAtOrDefault(1));

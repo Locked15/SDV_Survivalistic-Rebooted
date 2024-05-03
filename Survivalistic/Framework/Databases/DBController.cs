@@ -14,8 +14,8 @@ namespace Survivalistic_Rebooted.Framework.Databases
                                                                                                                             AssetHelper.EdiblesDBConstants.EdiblesDBAssetFileEnding)));
             foreach (IModInfo _mod in ModEntry.Instance.Helper.ModRegistry.GetAll().ToList())
             {
-                var assetFilePath = Path.Combine(AssetHelper.GetDatabaseAssetsFolderPath(true), AssetHelper.SplitModUniqueIDToAuthorAndIdentifier(_mod.Manifest.UniqueID).author,
-                                                                                                string.Concat(AssetHelper.SplitModUniqueIDToAuthorAndIdentifier(_mod.Manifest.UniqueID).identifier,
+                var assetFilePath = Path.Combine(AssetHelper.GetDatabaseAssetsFolderPath(true), AssetHelper.SplitModUniqueIDToAuthorAndIdentifier(_mod.Manifest.UniqueID)._author,
+                                                                                                string.Concat(AssetHelper.SplitModUniqueIDToAuthorAndIdentifier(_mod.Manifest.UniqueID)._identifier,
                                                                                                               AssetHelper.EdiblesDBConstants.EdiblesDBAssetFileEnding));
                 if (File.Exists(assetFilePath))
                     _actualEdiblesRawDatabase = ModEntry.Instance.Helper.Data.ReadJsonFile<EdiblesDB>(assetFilePath);
