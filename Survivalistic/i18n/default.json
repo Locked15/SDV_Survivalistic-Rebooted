@@ -53,15 +53,19 @@
     "Setting.BarsPosition.AxisY.Title": "Bars 'Y' Position",
     "Setting.BarsPosition.AxisY.Description": "Adds a 'Y' axis offset to the bars, based on the current bars position.\nWorks only if 'Bars Positioning' is set to 'custom'.",
 
-    // Bar Colors Settings.
+    // Bars Color Settings.
+    "Settings.BarsColor.DynamicHungerColor.Title": "Hunger Bar Dynamic Color",
+    "Settings.BarsColor.DynamicHungerColor.Description": "With this option set to true, color of Hunger Bar will dynamically change according to the currect value of the hunger on currect player. If this set to 'False', color of the will be static and independant from the current value.",
 
+    "Settings.BarsColor.DynamicThirstColor.Title": "Thirst Bar Dynamic Color",
+    "Settings.BarsColor.DynamicThirstColor.Description": "With this option set to true, color of Thirst Bar will dynamically change according to the currect value of the thirst on currect player. If this set to 'False', color of the will be static and independant from the current value.",
 
     // Compatibility Settings.
     "Setting.Compatibility.Title": "Compatibility Features",
     "Setting.Compatibility.Description": "Enables or disables compatibility mode for certain mods.",
 
-    "Setting.Compatibility.NonRecognizedFood.Title": "Allow Non-Supported Food",
-    "Setting.Compatibility.NonRecognizedFood.Description": "If set to true, the mod will automatically assign values to consumed food items not present in the database.",
+    "Setting.Compatibility.NonRecognizedFood.Title": "Allow Non-Recognized Food",
+    "Setting.Compatibility.NonRecognizedFood.Description": "If set to true, the mod will automatically assign values to consumed food items not present in the database. So you actually will restore Hunger and Thirst by consuming non-recognized by Survivalistic meals.",
 
     // Gameplay Settings.
     "Setting.Gameplay.SleepOptions.Title": "Sleep Options",
@@ -73,11 +77,60 @@
     "Setting.Gameplay.SleepOptions.HungerDiff.Description": "The exact value that will be added to your hunger level after sleep.\nRequires 'Sleep Decreases Status' to function.",
 
     "Setting.Gameplay.SleepOptions.ThirstDiff.Title": "Thirst Increase",
-    "Setting.Gameplay.SleepOptions.ThirstDiff.Description": "The exact value that will be added to your thirst level after sleep.\nRequires 'Sleep Decreases Status' to function."
+    "Setting.Gameplay.SleepOptions.ThirstDiff.Description": "The exact value that will be added to your thirst level after sleep.\nRequires 'Sleep Decreases Status' to function.",
 
     // Tools Consumption Rate.
+    "Settings.ToolsConsumption.Title": "Tools Consumption Rates",
 
+    "Settings.ToolsConsumption.Axe.Hunger": "Axe - Hunger",
+    "Settings.ToolsConsumption.Axe.Hunger.Description": "This option specifies accurate value of hunger which is used on single axe swing.",
+
+    "Settings.ToolsConsumption.Axe.Thirst": "Axe - Thirst",
+    "Settings.ToolsConsumption.Axe.Thirst.Description": "This option specifies accurate value of thirst which is used on single axe swing.",
+
+    "Settings.ToolsConsumption.Pickaxe.Hunger": "Pickaxe - Hunger",
+    "Settings.ToolsConsumption.Pickaxe.Hunger.Description": "This option specifies the accurate value of hunger used on a single pickaxe swing.",
+
+    "Settings.ToolsConsumption.Pickaxe.Thirst": "Pickaxe - Thirst",
+    "Settings.ToolsConsumption.Pickaxe.Thirst.Description": "This option specifies the accurate value of thirst used on a single pickaxe swing.",
+
+    "Settings.ToolsConsumption.Hoe.Hunger": "Hoe - Hunger",
+    "Settings.ToolsConsumption.Hoe.Hunger.Description": "This option specifies the accurate value of hunger used on a single hoe swing.",
+
+    "Settings.ToolsConsumption.Hoe.Thirst": "Hoe - Thirst",
+    "Settings.ToolsConsumption.Hoe.Thirst.Description": "This option specifies the accurate value of thirst used on a single hoe swing.",
+
+    "Settings.ToolsConsumption.Scythe.Hunger": "Scythe - Hunger",
+    "Settings.ToolsConsumption.Scythe.Hunger.Description": "This option specifies the accurate value of hunger used on a single scythe swing.",
+
+    "Settings.ToolsConsumption.Scythe.Thirst": "Scythe - Thirst",
+    "Settings.ToolsConsumption.Scythe.Thirst.Description": "This option specifies the accurate value of thirst used on a single scythe swing.",
+
+    "Settings.ToolsConsumption.FishingRod.Hunger": "Fishing Rod - Hunger",
+    "Settings.ToolsConsumption.FishingRod.Hunger.Description": "This option specifies the accurate value of hunger used on a single cast of the fishing rod.",
+
+    "Settings.ToolsConsumption.FishingRod.Thirst": "Fishing Rod - Thirst",
+    "Settings.ToolsConsumption.FishingRod.Thirst.Description": "This option specifies the accurate value of thirst used on a single cast of the fishing rod.",
+
+    "Settings.ToolsConsumption.WateringCan.Hunger": "Watering Can - Hunger",
+    "Settings.ToolsConsumption.WateringCan.Hunger.Description": "This option specifies the accurate value of hunger used on a single use of the watering can.",
+
+    "Settings.ToolsConsumption.WateringCan.Thirst": "Watering Can - Thirst",
+    "Settings.ToolsConsumption.WateringCan.Thirst.Description": "This option specifies the accurate value of thirst used on a single use of the watering can.",
+
+    "Settings.ToolsConsumption.Shears.Hunger": "Shears - Hunger",
+    "Settings.ToolsConsumption.Shears.Hunger.Description": "This option specifies the accurate value of hunger used on a single use of the shears.",
+
+    "Settings.ToolsConsumption.Shears.Thirst": "Shears - Thirst",
+    "Settings.ToolsConsumption.Shears.Thirst.Description": "This option specifies the accurate value of thirst used on a single use of the shears.",
+
+    "Settings.ToolsConsumption.MilkPail.Hunger": "Milk Pail - Hunger",
+    "Settings.ToolsConsumption.MilkPail.Hunger.Description": "This option specifies the accurate value of hunger used on a single use of the milk pail.",
+
+    "Settings.ToolsConsumption.MilkPail.Thirst": "Milk Pail - Thirst",
+    "Settings.ToolsConsumption.MilkPail.Thirst.Description": "This option specifies the accurate value of thirst used on a single use of the milk pail.",
 
     // Miscellaneous.
-
+    "Settings.Miscellaneous.ShowPopUpMessages.Title": "Show Pop-Up Messages",
+    "Settings.Miscellaneous.ShowPopUpMessages.Description": "With this option set to 'False' mod will stop to render pop-up's message boxes with restoration values of consumable meals."
 }
