@@ -1,7 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using StardewValley;
+using Survivalistic_Rebooted.Assets;
 using Survivalistic_Rebooted.Framework.Bars;
+using System.IO;
 
 namespace Survivalistic_Rebooted.Framework.Common
 {
@@ -49,8 +51,8 @@ namespace Survivalistic_Rebooted.Framework.Common
 
         public static void LoadTextures()
         {
-            HungerSprite = ModEntry.Instance.Helper.ModContent.Load<Texture2D>("assets/Bars/Hunger_Sprite.png");
-            ThirstSprite = ModEntry.Instance.Helper.ModContent.Load<Texture2D>("assets/Bars/Thirst_Sprite.png");
+            HungerSprite = ModEntry.Instance.Helper.ModContent.Load<Texture2D>(Path.Combine(AssetHelper.GetBarAssetsFolderPath(), AssetHelper.BarsConstants.HungerBarAssetFileName));
+            ThirstSprite = ModEntry.Instance.Helper.ModContent.Load<Texture2D>(Path.Combine(AssetHelper.GetBarAssetsFolderPath(), AssetHelper.BarsConstants.ThirstBarAssetFileName));
 
             BuffSprites = ModEntry.Instance.Helper.GameContent.Load<Texture2D>("TileSheets/BuffsIcons");
 

@@ -1,4 +1,6 @@
 using StardewModdingAPI;
+using Survivalistic_Rebooted.Assets;
+using System.IO;
 using System.Linq;
 
 namespace Survivalistic_Rebooted.Framework.Databases
@@ -7,34 +9,34 @@ namespace Survivalistic_Rebooted.Framework.Databases
     {
         public static void LoadDatabases()
         {
-            EdiblesDB _actualModDatabase = ModEntry.Instance.Helper.Data.ReadJsonFile<EdiblesDB>("assets/Databases/BaseGame_edibles.json");
-            if (_actualModDatabase != null)
+            EdiblesDB _actualEdiblesRawDatabase = ModEntry.Instance.Helper.Data.ReadJsonFile<EdiblesDB>(Path.Combine(AssetHelper.GetDatabaseAssetsFolderPath(),
+                                                                                                              string.Concat(AssetHelper.EdiblesDBConstants.BaseGameEdibleDBFileName,
+                                                                                                                            AssetHelper.EdiblesDBConstants.EdiblesDBAssetFileEnding)));
+            foreach (IModInfo _mod in ModEntry.Instance.Helper.ModRegistry.GetAll().ToList())
             {
-                for (var i = 0; i < _actualModDatabase.Edibles.Length / 2; i++)
+                var assetFilePath = Path.Combine(AssetHelper.GetDatabaseAssetsFolderPath(true), AssetHelper.SplitModUniqueIDToAuthorAndIdentifier(_mod.Manifest.UniqueID).author,
+                                                                                                string.Concat(AssetHelper.SplitModUniqueIDToAuthorAndIdentifier(_mod.Manifest.UniqueID).identifier,
+                                                                                                              AssetHelper.EdiblesDBConstants.EdiblesDBAssetFileEnding));
+                if (File.Exists(assetFilePath))
+                    _actualEdiblesRawDatabase = ModEntry.Instance.Helper.Data.ReadJsonFile<EdiblesDB>(assetFilePath);
+            }
+
+            if (_actualEdiblesRawDatabase != null) AddRedEdiblesToInGameDB(_actualEdiblesRawDatabase);
+        }
+
+        private static void AddRedEdiblesToInGameDB(EdiblesDB _actualModDatabase)
+        {
+            for (var i = 0; i < _actualModDatabase.Edibles.Length / 2; i++)
+            {
+                try
                 {
                     Foods.FoodDatabase.Add(_actualModDatabase.Edibles[i, 0], _actualModDatabase.Edibles[i, 1]);
                 }
-            }
-
-            foreach (IModInfo _mod in ModEntry.Instance.Helper.ModRegistry.GetAll().ToList())
-            {
-                _actualModDatabase = ModEntry.Instance.Helper.Data.ReadJsonFile<EdiblesDB>($"assets/Databases/{_mod.Manifest.UniqueID}_edibles.json");
-                if (_actualModDatabase != null)
+                catch (System.ArgumentException exception)
                 {
-                    for (var i = 0; i < _actualModDatabase.Edibles.Length / 2; i++)
-                    {
-                        try
-                        {
-                            Foods.FoodDatabase.Add(_actualModDatabase.Edibles[i, 0], _actualModDatabase.Edibles[i, 1]);
-                        }
-                        catch (System.ArgumentException exception)
-                        {
-                            ModEntry.Instance.Monitor.Log(_mod.Manifest.UniqueID + "_edibles Attempted to add duplicate entry to EdiblesDB", LogLevel.Trace);
-                            ModEntry.Instance.Monitor.Log(exception.Message, LogLevel.Trace);
-                            ModEntry.Instance.Monitor.Log(exception.StackTrace, LogLevel.Trace);
-                        }
-
-                    }
+                    ModEntry.Instance.Monitor.Log($"({_actualModDatabase.Edibles[i, 0]}) — Duplicate Entry!", LogLevel.Trace);
+                    ModEntry.Instance.Monitor.Log(exception.Message, LogLevel.Trace);
+                    ModEntry.Instance.Monitor.Log(exception.StackTrace, LogLevel.Trace);
                 }
             }
         }
