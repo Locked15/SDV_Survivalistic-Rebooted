@@ -52,9 +52,14 @@
     "Setting.BarsPosition.AxisY.Title": "Posicao 'Y' das Barras",
     "Setting.BarsPosition.AxisY.Description": "Adiciona distancia vertical para as barras, calculado com base na posicao atual.\nFunciona apenas se 'Posicionamento de Barras' estiver definida para 'custom'.",
 
+    // Bars Color.
+    "Setting.BarsColor.Title": "Cor das Barras",
 
-    // Bar Colors Settings.
+    "Setting.BarsColor.DynamicHungerColor.Title": "Cor Dinâmica da Barra de Fome",
+    "Setting.BarsColor.DynamicHungerColor.Description": "Com esta opção ativada, a cor da Barra de Fome mudará dinamicamente de acordo com o valor atual de fome do jogador. Se estiver definido como 'Falso', a cor será estática e independente do valor atual.",
 
+    "Setting.BarsColor.DynamicThirstColor.Title": "Cor Dinâmica da Barra de Sede",
+    "Setting.BarsColor.DynamicThirstColor.Description": "Com esta opção ativada, a cor da Barra de Sede mudará dinamicamente de acordo com o valor atual de sede do jogador. Se estiver definido como 'Falso', a cor será estática e independente do valor atual.",
 
     // Compatibility Settings.
     "Setting.Compatibility.Title": "Compatibilidade",
@@ -73,11 +78,62 @@
     "Setting.Gameplay.SleepOptions.HungerDiff.Description": "Ira aumentar sua fome apos dormir.\nRequer 'Dormir Diminui os Status' para funcionar.",
 
     "Setting.Gameplay.SleepOptions.ThirstDiff.Title": "Aumento de sede",
-    "Setting.Gameplay.SleepOptions.ThirstDiff.Description": "Ira aumentar sua sede apos dormir.\nRequer 'Dormir Diminui os Status' para funcionar."
+    "Setting.Gameplay.SleepOptions.ThirstDiff.Description": "Ira aumentar sua sede apos dormir.\nRequer 'Dormir Diminui os Status' para funcionar.",
 
     // Tools Consumption Rate.
+    "Setting.ToolsConsumption.Title": "Taxas de Consumo de Ferramentas",
 
+    "Setting.ToolsConsumption.Axe.Hunger.Title": "Machado - Fome",
+    "Setting.ToolsConsumption.Axe.Hunger.Description": "Esta opção especifica o valor exato de fome usado em um único golpe de machado.",
+
+    "Setting.ToolsConsumption.Axe.Thirst.Title": "Machado - Sede",
+    "Setting.ToolsConsumption.Axe.Thirst.Description": "Esta opção especifica o valor exato de sede usado em um único golpe de machado.",
+
+    "Setting.ToolsConsumption.Pickaxe.Hunger.Title": "Picareta - Fome",
+    "Setting.ToolsConsumption.Pickaxe.Hunger.Description": "Esta opção especifica o valor exato de fome usado em um único golpe de picareta.",
+
+    "Setting.ToolsConsumption.Pickaxe.Thirst.Title": "Picareta - Sede",
+    "Setting.ToolsConsumption.Pickaxe.Thirst.Description": "Esta opção especifica o valor exato de sede usado em um único golpe de picareta.",
+
+    "Setting.ToolsConsumption.Hoe.Hunger.Title": "Enxada - Fome",
+    "Setting.ToolsConsumption.Hoe.Hunger.Description": "Esta opção especifica o valor exato de fome usado em um único golpe de enxada.",
+
+    "Setting.ToolsConsumption.Hoe.Thirst.Title": "Enxada - Sede",
+    "Setting.ToolsConsumption.Hoe.Thirst.Description": "Esta opção especifica o valor exato de sede usado em um único golpe de enxada.",
+
+    "Setting.ToolsConsumption.Scythe.Hunger.Title": "Foice - Fome",
+    "Setting.ToolsConsumption.Scythe.Hunger.Description": "Esta opção especifica o valor exato de fome usado em um único golpe de foice.",
+
+    "Setting.ToolsConsumption.Scythe.Thirst.Title": "Foice - Sede",
+    "Setting.ToolsConsumption.Scythe.Thirst.Description": "Esta opção especifica o valor exato de sede usado em um único golpe de foice.",
+
+    "Setting.ToolsConsumption.FishingRod.Hunger.Title": "Vara de Pesca - Fome",
+    "Setting.ToolsConsumption.FishingRod.Hunger.Description": "Esta opção especifica o valor exato de fome usado em uma única pescaria.",
+
+    "Setting.ToolsConsumption.FishingRod.Thirst.Title": "Vara de Pesca - Sede",
+    "Setting.ToolsConsumption.FishingRod.Thirst.Description": "Esta opção especifica o valor exato de sede usado em uma única pescaria.",
+
+    "Setting.ToolsConsumption.WateringCan.Hunger.Title": "Regador - Fome",
+    "Setting.ToolsConsumption.WateringCan.Hunger.Description": "Esta opção especifica o valor exato de fome usado em um único uso do regador.",
+
+    "Setting.ToolsConsumption.WateringCan.Thirst.Title": "Regador - Sede",
+    "Setting.ToolsConsumption.WateringCan.Thirst.Description": "Esta opção especifica o valor exato de sede usado em um único uso do regador.",
+
+    "Setting.ToolsConsumption.Shears.Hunger.Title": "Tesoura - Fome",
+    "Setting.ToolsConsumption.Shears.Hunger.Description": "Esta opção especifica o valor exato de fome usado em um único uso da tesoura.",
+
+    "Setting.ToolsConsumption.Shears.Thirst.Title": "Tesoura - Sede",
+    "Setting.ToolsConsumption.Shears.Thirst.Description": "Esta opção especifica o valor exato de sede usado em um único uso da tesoura.",
+
+    "Setting.ToolsConsumption.MilkPail.Hunger.Title": "Balde de Leite - Fome",
+    "Setting.ToolsConsumption.MilkPail.Hunger.Description": "Esta opção especifica o valor exato de fome usado em um único uso do balde de leite.",
+
+    "Setting.ToolsConsumption.MilkPail.Thirst.Title": "Balde de Leite - Sede",
+    "Setting.ToolsConsumption.MilkPail.Thirst.Description": "Esta opção especifica o valor exato de sede usado em um único uso do balde de leite.",
 
     // Miscellaneous.
+    "Setting.Miscellaneous.Title": "Diversos",
 
+    "Setting.Miscellaneous.ShowPopUpMessages.Title": "Exibir Mensagens Pop-Up",
+    "Setting.Miscellaneous.ShowPopUpMessages.Description": "Com esta opção definida como 'Falso', o mod deixará de exibir caixas de mensagens pop-up com os valores de restauração das refeições consumíveis."
 }
