@@ -21,8 +21,8 @@ namespace Survivalistic_Rebooted.Models
                         Defense = { 2 }
                     })
                 {
-                    description = ModEntry.Instance.Helper.Translation.Get("buff.fullness.description"),
-                    displaySource = ModEntry.Instance.Helper.Translation.Get("buff.fullness.source"),
+                    description = ModEntry.Instance.Helper.Translation.Get("Buff.Fullness.Description"),
+                    displaySource = ModEntry.Instance.Helper.Translation.Get("Buff.Fullness.Source"),
                     iconTexture = Textures.BuffSprites,
                     iconSheetIndex = 28,
                 },
@@ -34,8 +34,8 @@ namespace Survivalistic_Rebooted.Models
                         MaxStamina = { 25 }
                     })
                 {
-                    description = ModEntry.Instance.Helper.Translation.Get("buff.hydrated.description"),
-                    displaySource = ModEntry.Instance.Helper.Translation.Get("buff.hydrated.source"),
+                    description = ModEntry.Instance.Helper.Translation.Get("Buff.Hydrated.Description"),
+                    displaySource = ModEntry.Instance.Helper.Translation.Get("Buff.Hydrated.Source"),
                     iconTexture = Textures.BuffSprites,
                     iconSheetIndex = 19
                 },
@@ -49,8 +49,8 @@ namespace Survivalistic_Rebooted.Models
                     },
                     isDebuff: true)
                 {
-                    description = ModEntry.Instance.Helper.Translation.Get("hunger-warning"),
-                    displaySource = ModEntry.Instance.Helper.Translation.Get("hunger-source"),
+                    description = ModEntry.Instance.Helper.Translation.Get("Warning.Hunger.Title"),
+                    displaySource = ModEntry.Instance.Helper.Translation.Get("Warning.Hunger.Source"),
                     iconTexture = Textures.BuffSprites,
                     iconSheetIndex = 6
                 },
@@ -64,8 +64,8 @@ namespace Survivalistic_Rebooted.Models
                     },
                     isDebuff: true)
                 {
-                    description = ModEntry.Instance.Helper.Translation.Get("thirsty-warning"),
-                    displaySource = ModEntry.Instance.Helper.Translation.Get("thirsty-source"),
+                    description = ModEntry.Instance.Helper.Translation.Get("Warning.Thirst.Title"),
+                    displaySource = ModEntry.Instance.Helper.Translation.Get("Warning.Thirst.Source"),
                     iconTexture = Textures.BuffSprites,
                     iconSheetIndex = 7
                 },
@@ -80,8 +80,8 @@ namespace Survivalistic_Rebooted.Models
                     },
                     isDebuff: true)
                 {
-                    description = ModEntry.Instance.Helper.Translation.Get("pass-out"),
-                    displaySource = ModEntry.Instance.Helper.Translation.Get("pass-out-source"),
+                    description = ModEntry.Instance.Helper.Translation.Get("Debuff.PassOut.Title"),
+                    displaySource = ModEntry.Instance.Helper.Translation.Get("Debuff.PassOut.Source"),
                     iconTexture = Textures.BuffSprites,
                     iconSheetIndex = 26
                 }

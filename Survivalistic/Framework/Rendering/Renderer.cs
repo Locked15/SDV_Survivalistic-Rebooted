@@ -76,11 +76,11 @@ namespace Survivalistic_Rebooted.Framework.Rendering
 
                     string actualString = "";
                     if (Int32.Parse(foodStatus[0]) > 0)
-                        actualString += string.Format(ModEntry.Instance.Helper.Translation.Get("info-fullness"), foodStatus[0]);
+                        actualString += string.Format(ModEntry.Instance.Helper.Translation.Get("Info.Fullness.Restore"), foodStatus[0]);
                     if (Int32.Parse(foodStatus[0]) > 0 && Int32.Parse(foodStatus[1]) > 0)
                         actualString += "\n";
                     if (Int32.Parse(foodStatus[1]) > 0)
-                        actualString += string.Format(ModEntry.Instance.Helper.Translation.Get("info-thirsty"), foodStatus[1]);
+                        actualString += string.Format(ModEntry.Instance.Helper.Translation.Get("Info.Thirst.Restore"), foodStatus[1]);
 
                     string currentText = actualString;
                     Vector2 textSize = Game1.smallFont.MeasureString(currentText);

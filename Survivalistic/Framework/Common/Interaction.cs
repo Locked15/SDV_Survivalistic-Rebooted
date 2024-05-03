@@ -102,8 +102,8 @@ namespace Survivalistic_Rebooted.Framework.Common
 
             if (_hunger > 1 || _thirst > 1)
             {
-                var messageTemplate = _hunger > 1 ? ModEntry.Instance.Helper.Translation.Get("info-fullness") :
-                                                    ModEntry.Instance.Helper.Translation.Get("info-thirsty");
+                var messageTemplate = _hunger > 1 ? ModEntry.Instance.Helper.Translation.Get("Info.Fullness.Restore") :
+                                                    ModEntry.Instance.Helper.Translation.Get("Info.Thirst.Restore");
                 var actualDiff = Math.Max(_hunger, _thirst);
 
                 Game1.addHUDMessage(new HUDMessage(string.Format(messageTemplate, actualDiff), 4));

@@ -130,15 +130,15 @@ namespace Survivalistic_Rebooted
                 // Title.
                 configMenu.AddSectionTitle(
                     mod: ModManifest,
-                    text: () => Helper.Translation.Get("multiplier-settings"),
-                    tooltip: () => Helper.Translation.Get("multiplier-settings-des")
+                    text: () => Helper.Translation.Get("Setting.Multiplier.Title"),
+                    tooltip: () => Helper.Translation.Get("Setting.Multiplier.Description")
                 );
 
                 // Main hunger multiplier.
                 configMenu.AddNumberOption(
                     mod: ModManifest,
-                    name: () => Helper.Translation.Get("main-hunger-setting"),
-                    tooltip: () => Helper.Translation.Get("main-hunger-setting-des"),
+                    name: () => Helper.Translation.Get("Setting.Multiplier.PassiveHunger.Title"),
+                    tooltip: () => Helper.Translation.Get("Setting.Multiplier.PassiveHunger.Description"),
                     getValue: () => Config.HungerMultiplier,
                     setValue: value => Config.HungerMultiplier = value,
                     min: 0.0F,
@@ -148,8 +148,8 @@ namespace Survivalistic_Rebooted
                 // Main thirst multiplier.
                 configMenu.AddNumberOption(
                     mod: ModManifest,
-                    name: () => Helper.Translation.Get("main-thirst-setting"),
-                    tooltip: () => Helper.Translation.Get("main-thirst-setting-des"),
+                    name: () => Helper.Translation.Get("Setting.Multiplier.PassiveThirst.Title"),
+                    tooltip: () => Helper.Translation.Get("Setting.Multiplier.PassiveThirst.Description"),
                     getValue: () => Config.ThirstMultiplier,
                     setValue: value => Config.ThirstMultiplier = value,
                     min: 0.0F,
@@ -159,8 +159,8 @@ namespace Survivalistic_Rebooted
                 // Action hunger multiplier.
                 configMenu.AddNumberOption(
                     mod: ModManifest,
-                    name: () => Helper.Translation.Get("action-hunger-setting"),
-                    tooltip: () => Helper.Translation.Get("action-hunger-setting-des"),
+                    name: () => Helper.Translation.Get("Setting.Multiplier.HungerOnAction.Title"),
+                    tooltip: () => Helper.Translation.Get("Setting.Multiplier.HungerOnAction.Description"),
                     getValue: () => Config.HungerActionMultiplier,
                     setValue: value => Config.HungerActionMultiplier = value,
                     min: 0.0F,
@@ -170,8 +170,8 @@ namespace Survivalistic_Rebooted
                 // Action thirst multiplier.
                 configMenu.AddNumberOption(
                     mod: ModManifest,
-                    name: () => Helper.Translation.Get("action-thirst-setting"),
-                    tooltip: () => Helper.Translation.Get("action-thirst-setting-des"),
+                    name: () => Helper.Translation.Get("Setting.Multiplier.ThirstOnAction.Title"),
+                    tooltip: () => Helper.Translation.Get("Setting.Multiplier.ThirstOnAction.Description"),
                     getValue: () => Config.ThirstActionMultiplier,
                     setValue: value => Config.ThirstActionMultiplier = value,
                     min: 0.0F,
@@ -184,15 +184,15 @@ namespace Survivalistic_Rebooted
                 // Title.
                 configMenu.AddSectionTitle(
                     mod: ModManifest,
-                    text: () => Helper.Translation.Get("bars-position-settings"),
-                    tooltip: () => Helper.Translation.Get("bars-position-settings-des")
+                    text: () => Helper.Translation.Get("Setting.BarsPosition.Title"),
+                    tooltip: () => Helper.Translation.Get("Setting.BarsPosition.Description")
                 );
 
                 // Bar positioning layout.
                 configMenu.AddTextOption(
                     mod: ModManifest,
-                    name: () => Helper.Translation.Get("bars-position-variant"),
-                    tooltip: () => Helper.Translation.Get("bars-position-variant-des"),
+                    name: () => Helper.Translation.Get("Setting.BarsPosition.TypeOfPosition.Title"),
+                    tooltip: () => Helper.Translation.Get("Setting.BarsPosition.TypeOfPosition.Description"),
                     getValue: () => Config.BarsPosition,
                     setValue: value => Config.BarsPosition = value
                 );
@@ -200,8 +200,8 @@ namespace Survivalistic_Rebooted
                 // X position setting.
                 configMenu.AddNumberOption(
                     mod: ModManifest,
-                    name: () => Helper.Translation.Get("bars-position-x"),
-                    tooltip: () => Helper.Translation.Get("bars-position-x-des"),
+                    name: () => Helper.Translation.Get("Setting.BarsPosition.AxisX.Title"),
+                    tooltip: () => Helper.Translation.Get("Setting.BarsPosition.AxisX.Description"),
                     getValue: () => Config.BarsCustomX,
                     setValue: value => Config.BarsCustomX = value
                 );
@@ -209,8 +209,8 @@ namespace Survivalistic_Rebooted
                 // Y position setting.
                 configMenu.AddNumberOption(
                     mod: ModManifest,
-                    name: () => Helper.Translation.Get("bars-position-y"),
-                    tooltip: () => Helper.Translation.Get("bars-position-y-des"),
+                    name: () => Helper.Translation.Get("Setting.BarsPosition.AxisY.Title"),
+                    tooltip: () => Helper.Translation.Get("Setting.BarsPosition.AxisY.Description"),
                     getValue: () => Config.BarsCustomY,
                     setValue: value => Config.BarsCustomY = value
                 );
@@ -221,15 +221,15 @@ namespace Survivalistic_Rebooted
                 // Title.
                 configMenu.AddSectionTitle(
                     mod: ModManifest,
-                    text: () => Helper.Translation.Get("compatibility-settings"), //TODO: Update translation.
-                    tooltip: () => Helper.Translation.Get("compatibility-settings-des")
+                    text: () => Helper.Translation.Get("Setting.Compatibility.Title"), //TODO: Update translation.
+                    tooltip: () => Helper.Translation.Get("Setting.Compatibility.Description")
                 );
 
                 // Food support bar.
                 configMenu.AddBoolOption(
                     mod: ModManifest,
-                    name: () => Helper.Translation.Get("non-supported-food"),
-                    tooltip: () => Helper.Translation.Get("non-supported-food-des"),
+                    name: () => Helper.Translation.Get("Setting.Compatibility.NonRecognizedFood.Title"),
+                    tooltip: () => Helper.Translation.Get("Setting.Compatibility.NonRecognizedFood.Description"),
                     getValue: () => Config.NonSupportedFood,
                     setValue: value => Config.NonSupportedFood = value
                 );
@@ -240,14 +240,14 @@ namespace Survivalistic_Rebooted
                 // Title.
                 configMenu.AddSectionTitle(
                     mod: ModManifest,
-                    text: () => Helper.Translation.Get("sleep-options")
+                    text: () => Helper.Translation.Get("Setting.Gameplay.SleepOptions.Title")
                 );
 
                 // Main Setting.
                 configMenu.AddBoolOption(
                     mod: ModManifest,
-                    name: () => Helper.Translation.Get("sleep-decrease"),
-                    tooltip: () => Helper.Translation.Get("sleep-decrease-des"),
+                    name: () => Helper.Translation.Get("Setting.Gameplay.SleepOptions.SleepDecrease.Title"),
+                    tooltip: () => Helper.Translation.Get("Setting.Gameplay.SleepOptions.SleepDecrease.Description"),
                     getValue: () => Config.DecreaseValuesAfterSleep,
                     setValue: value => Config.DecreaseValuesAfterSleep = value
                 );
@@ -255,8 +255,8 @@ namespace Survivalistic_Rebooted
                 // Hunger.
                 configMenu.AddNumberOption(
                     mod: ModManifest,
-                    name: () => Helper.Translation.Get("hunger-increase-after-sleep"),
-                    tooltip: () => Helper.Translation.Get("hunger-increase-after-sleep-des"),
+                    name: () => Helper.Translation.Get("Setting.Gameplay.SleepOptions.HungerDiff.Title"),
+                    tooltip: () => Helper.Translation.Get("Setting.Gameplay.SleepOptions.HungerDiff.Description"),
                     getValue: () => Config.FoodDecreaseAfterSleep,
                     setValue: value => Config.FoodDecreaseAfterSleep = value,
                     min: -100,
@@ -266,8 +266,8 @@ namespace Survivalistic_Rebooted
                 // Thirst.
                 configMenu.AddNumberOption(
                     mod: ModManifest,
-                    name: () => Helper.Translation.Get("thirst-increase-after-sleep"),
-                    tooltip: () => Helper.Translation.Get("thirst-increase-after-sleep-des"),
+                    name: () => Helper.Translation.Get("Setting.Gameplay.SleepOptions.ThirstDiff.Title"),
+                    tooltip: () => Helper.Translation.Get("Setting.Gameplay.SleepOptions.ThirstDiff.Description"),
                     getValue: () => Config.ThirstDecreaseAfterSleep,
                     setValue: value => Config.ThirstDecreaseAfterSleep = value,
                     min: -100,

@@ -17,7 +17,7 @@ namespace Survivalistic_Rebooted.Framework.Bars
                 if (!isHungerWarningActive)
                 {
                     isHungerWarningActive = true;
-                    Game1.addHUDMessage(new HUDMessage(ModEntry.Instance.Helper.Translation.Get("hunger-warning"), 2));
+                    Game1.addHUDMessage(new HUDMessage(ModEntry.Instance.Helper.Translation.Get("Warning.Hunger.Title"), 2));
                 }
             }
             else isHungerWarningActive = false;
@@ -27,7 +27,7 @@ namespace Survivalistic_Rebooted.Framework.Bars
                 if (!isThirstWarningActive)
                 {
                     isThirstWarningActive = true;
-                    Game1.addHUDMessage(new HUDMessage(ModEntry.Instance.Helper.Translation.Get("thirsty-warning"), 2));
+                    Game1.addHUDMessage(new HUDMessage(ModEntry.Instance.Helper.Translation.Get("Warning.Thirst.Title"), 2));
                 }
             }
             else isThirstWarningActive = false;
