@@ -1,7 +1,21 @@
-﻿namespace Survivalistic_Rebooted.Models
+﻿using System.Collections.Generic;
+using System.Linq;
+
+namespace Survivalistic_Rebooted.Models
 {
     public class Config
     {
+        public static List<string> PossibleBarLocations { get; } = new()
+        {
+            "bottom-right",
+            "bottom-left",
+            "middle-right",
+            "middle-left",
+            "top-left",
+            "top-right",
+            "custom"
+        };
+
         // MULTIPLIERS
         public float ThirstMultiplier { get; set; } = 0.5f;
 
@@ -12,7 +26,7 @@
         public float ThirstActionMultiplier { get; set; } = 1f;
 
         // BARS POSITION
-        public string BarsPosition { get; set; } = "bottom-right";
+        public string BarsPosition { get; set; } = PossibleBarLocations.First();
 
         public int BarsCustomX { get; set; } = 0;
 
