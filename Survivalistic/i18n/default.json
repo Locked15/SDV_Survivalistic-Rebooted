@@ -57,10 +57,10 @@
     "Setting.BarsColor.Title": "Bars Color",
 
     "Setting.BarsColor.DynamicHungerColor.Title": "Hunger Bar Dynamic Color",
-    "Setting.BarsColor.DynamicHungerColor.Description": "With this option set to true, color of Hunger Bar will dynamically change according to the currect value of the hunger on currect player. If this set to 'False', color of the will be static and independant from the current value.",
+    "Setting.BarsColor.DynamicHungerColor.Description": "With this option set to true, the color of the Hunger Bar will dynamically change according to the current value of the hunger on the current player. If this set to 'False', color of the will be static and independent of the current value.",
 
     "Setting.BarsColor.DynamicThirstColor.Title": "Thirst Bar Dynamic Color",
-    "Setting.BarsColor.DynamicThirstColor.Description": "With this option set to true, color of Thirst Bar will dynamically change according to the currect value of the thirst on currect player. If this set to 'False', color of the will be static and independant from the current value.",
+    "Setting.BarsColor.DynamicThirstColor.Description": "With this option set to true, the color of the Thirst Bar will dynamically change according to the current value of the thirst on the current player. If this set to 'False', color of the will be static and independent of the current value.",
 
     // Compatibility Settings.
     "Setting.Compatibility.Title": "Compatibility Features",
@@ -73,7 +73,7 @@
     "Setting.Gameplay.SleepOptions.Title": "Sleep Options",
 
     "Setting.Gameplay.SleepOptions.SleepDecrease.Title": "Sleep Decreases Status",
-    "Setting.Gameplay.SleepOptions.SleepDecrease.Description": "If enabled, your statuses will decrease after sleep (hunger and thirst will increase).",
+    "Setting.Gameplay.SleepOptions.SleepDecrease.Description": "If enabled, your statuses will decrease after sleep (hunger and thirst demand will increase).",
 
     "Setting.Gameplay.SleepOptions.HungerDiff.Title": "Hunger Increase",
     "Setting.Gameplay.SleepOptions.HungerDiff.Description": "The exact value that will be added to your hunger level after sleep.\nRequires 'Sleep Decreases Status' to function.",
