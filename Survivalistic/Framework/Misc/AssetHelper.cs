@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Linq;
 
-namespace Survivalistic_Rebooted.Assets
+namespace Survivalistic_Rebooted.Framework.Misc
 {
     public class AssetHelper
     {

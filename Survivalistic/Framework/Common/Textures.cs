@@ -1,8 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using StardewValley;
-using Survivalistic_Rebooted.Assets;
 using Survivalistic_Rebooted.Framework.Bars;
+using Survivalistic_Rebooted.Framework.Misc;
 using System.IO;
 
 namespace Survivalistic_Rebooted.Framework.Common
