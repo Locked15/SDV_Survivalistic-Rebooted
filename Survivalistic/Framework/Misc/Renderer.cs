@@ -20,11 +20,11 @@ namespace Survivalistic_Rebooted.Framework.Misc
 
             CheckMouseHovering();
 
-            e.SpriteBatch.Draw(Textures.HungerSprite, new Rectangle((int)BarsPosition.barPosition.X, (int)BarsPosition.barPosition.Y - 240, Textures.HungerSprite.Width * 4, Textures.HungerSprite.Height * 4), Color.White);
-            e.SpriteBatch.Draw(Textures.ThirstSprite, new Rectangle((int)BarsPosition.barPosition.X - 60, (int)BarsPosition.barPosition.Y - 240, Textures.ThirstSprite.Width * 4, Textures.ThirstSprite.Height * 4), Color.White);
+            e.SpriteBatch.Draw(Textures.HungerSprite, new Rectangle((int)BarsPosition.BarPosition.X, (int)BarsPosition.BarPosition.Y - 240, Textures.HungerSprite.Width * 4, Textures.HungerSprite.Height * 4), Color.White);
+            e.SpriteBatch.Draw(Textures.ThirstSprite, new Rectangle((int)BarsPosition.BarPosition.X - 60, (int)BarsPosition.BarPosition.Y - 240, Textures.ThirstSprite.Width * 4, Textures.ThirstSprite.Height * 4), Color.White);
 
-            e.SpriteBatch.Draw(Textures.HungerFiller, new Vector2(BarsPosition.barPosition.X + 36, BarsPosition.barPosition.Y - 25), new Rectangle(0, 0, Textures.HungerFiller.Width * 6 * Game1.pixelZoom, (int)BarsInformations.HungerPercentage), BarsInformations.GetHungerBarColorWithOffset(), 3.138997f, new Vector2(0.5f, 0.5f), 1f, SpriteEffects.None, 1f);
-            e.SpriteBatch.Draw(Textures.ThirstFiller, new Vector2(BarsPosition.barPosition.X - 24, BarsPosition.barPosition.Y - 25), new Rectangle(0, 0, Textures.ThirstFiller.Width * 6 * Game1.pixelZoom, (int)BarsInformations.ThirstPercentage), BarsInformations.GetThirstBarColorWithOffset(), 3.138997f, new Vector2(0.5f, 0.5f), 1f, SpriteEffects.None, 1f);
+            e.SpriteBatch.Draw(Textures.HungerFiller, new Vector2(BarsPosition.BarPosition.X + 36, BarsPosition.BarPosition.Y - 25), new Rectangle(0, 0, Textures.HungerFiller.Width * 6 * Game1.pixelZoom, (int)BarsInformations.HungerPercentage), BarsInformations.GetHungerBarColorWithOffset(), 3.138997f, new Vector2(0.5f, 0.5f), 1f, SpriteEffects.None, 1f);
+            e.SpriteBatch.Draw(Textures.ThirstFiller, new Vector2(BarsPosition.BarPosition.X - 24, BarsPosition.BarPosition.Y - 25), new Rectangle(0, 0, Textures.ThirstFiller.Width * 6 * Game1.pixelZoom, (int)BarsInformations.ThirstPercentage), BarsInformations.GetThirstBarColorWithOffset(), 3.138997f, new Vector2(0.5f, 0.5f), 1f, SpriteEffects.None, 1f);
 
             if (BarsDatabase.RenderNumericalHunger)
             {
@@ -37,7 +37,7 @@ namespace Survivalistic_Rebooted.Framework.Misc
                 Game1.spriteBatch.DrawString(
                     Game1.dialogueFont,
                     information,
-                    new Vector2(BarsPosition.barPosition.X + textPosition.X, BarsPosition.barPosition.Y - 240 + Textures.HungerSprite.Height * 4 / 4 + 8),
+                    new Vector2(BarsPosition.BarPosition.X + textPosition.X, BarsPosition.BarPosition.Y - 240 + Textures.HungerSprite.Height * 4 / 4 + 8),
                     BarsInformations.GetHungerBarColorWithOffset(),
                     0f,
                     new Vector2(textPosition.Y, 0),
@@ -57,7 +57,7 @@ namespace Survivalistic_Rebooted.Framework.Misc
                 Game1.spriteBatch.DrawString(
                     Game1.dialogueFont,
                     information,
-                    new Vector2(BarsPosition.barPosition.X - 60 + text_position.X, BarsPosition.barPosition.Y - 240 + Textures.HungerSprite.Height * 4 / 4 + 8),
+                    new Vector2(BarsPosition.BarPosition.X - 60 + text_position.X, BarsPosition.BarPosition.Y - 240 + Textures.HungerSprite.Height * 4 / 4 + 8),
                     BarsInformations.GetThirstBarColorWithOffset(),
                     0f,
                     new Vector2(text_position.Y, 0),
@@ -94,15 +94,15 @@ namespace Survivalistic_Rebooted.Framework.Misc
         {
             Vector2 mousePosition = new Vector2(Game1.getMousePosition(true).X, Game1.getMousePosition(true).Y);
 
-            BarsDatabase.RenderNumericalHunger = mousePosition.X >= BarsPosition.barPosition.X &&
-                mousePosition.X <= BarsPosition.barPosition.X + Textures.HungerSprite.Width * 4 &&
-                mousePosition.Y >= BarsPosition.barPosition.Y - 240 &&
-                mousePosition.Y <= BarsPosition.barPosition.Y - 240 + Textures.HungerSprite.Height * 4;
+            BarsDatabase.RenderNumericalHunger = mousePosition.X >= BarsPosition.BarPosition.X &&
+                mousePosition.X <= BarsPosition.BarPosition.X + Textures.HungerSprite.Width * 4 &&
+                mousePosition.Y >= BarsPosition.BarPosition.Y - 240 &&
+                mousePosition.Y <= BarsPosition.BarPosition.Y - 240 + Textures.HungerSprite.Height * 4;
 
-            BarsDatabase.RenderNumericalThirst = mousePosition.X >= BarsPosition.barPosition.X - 60 &&
-                mousePosition.X <= BarsPosition.barPosition.X - 60 + Textures.HungerSprite.Width * 4 &&
-                mousePosition.Y >= BarsPosition.barPosition.Y - 240 &&
-                mousePosition.Y <= BarsPosition.barPosition.Y - 240 + Textures.HungerSprite.Height * 4;
+            BarsDatabase.RenderNumericalThirst = mousePosition.X >= BarsPosition.BarPosition.X - 60 &&
+                mousePosition.X <= BarsPosition.BarPosition.X - 60 + Textures.HungerSprite.Width * 4 &&
+                mousePosition.Y >= BarsPosition.BarPosition.Y - 240 &&
+                mousePosition.Y <= BarsPosition.BarPosition.Y - 240 + Textures.HungerSprite.Height * 4;
         }
     }
 }

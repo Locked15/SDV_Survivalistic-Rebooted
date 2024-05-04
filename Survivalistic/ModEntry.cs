@@ -64,6 +64,8 @@ namespace Survivalistic_Rebooted
 
         private void OnUpdate(object sender, UpdateTickedEventArgs e)
         {
+            BarsPosition.SetBarsPosition();
+
             Interaction.EatingCheck();
             Interaction.UsingToolCheck();
             Interaction.UpdateTickInformation();
@@ -95,7 +97,6 @@ namespace Survivalistic_Rebooted
             if (!NetController._firstLoad) NetController.Sync();
             Interaction.Awake();
             NetController.Sync();
-            BarsPosition.SetBarsPosition();
             Interaction.ReceiveAwakeInfo();
             BarsUpdate.CalculatePercentage();
             BarsWarnings.VerifyStatus();
