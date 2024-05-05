@@ -48,21 +48,21 @@ namespace Survivalistic_Rebooted.Models.Config
         public int ThirstDecreaseAfterSleep { get; set; }
 
         // TOOLS CONSUMPTION RATE
-        public Consumption AxeConsumption { get; set; } = (0.50F, 0.25F);
+        public Needs AxeConsumption { get; set; } = (0.50F, 0.25F);
 
-        public Consumption PickAxeConsumption { get; set; } = (0.50F, 0.25F);
+        public Needs PickAxeConsumption { get; set; } = (0.50F, 0.25F);
 
-        public Consumption HoeConsumption { get; set; } = (0.50F, 0.25F);
+        public Needs HoeConsumption { get; set; } = (0.50F, 0.25F);
 
-        public Consumption ScytheConsumption { get; set; } = (0.10F, 0.20F);
+        public Needs ScytheConsumption { get; set; } = (0.10F, 0.20F);
 
-        public Consumption FishingRodConsumption { get; set; } = (0.15F, 0.30F);
+        public Needs FishingRodConsumption { get; set; } = (0.15F, 0.30F);
 
-        public Consumption WateringCanConsumption { get; set; } = (0.10F, 0.20F);
+        public Needs WateringCanConsumption { get; set; } = (0.10F, 0.20F);
 
-        public Consumption ShearsConsumption { get; set; } = (0.15F, 0.30F);
+        public Needs ShearsConsumption { get; set; } = (0.15F, 0.30F);
 
-        public Consumption MilkPailConsumption { get; set; } = (0.15F, 0.30F);
+        public Needs MilkPailConsumption { get; set; } = (0.15F, 0.30F);
 
         // MISCELLANEOUS
         public bool ShowPopUpWithRestorationValues { get; set; } = true;
