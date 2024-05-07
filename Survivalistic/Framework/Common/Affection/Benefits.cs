@@ -5,7 +5,7 @@ namespace Survivalistic_Rebooted.Framework.Common.Affection
 {
     public static class Benefits
     {
-        public static bool VerifyBenefits()
+        public static bool VerifyStatus()
         {
             if (!Context.IsWorldReady)
                 return false;

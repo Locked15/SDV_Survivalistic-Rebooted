@@ -82,8 +82,8 @@ namespace Survivalistic_Rebooted.Framework.Common
             UpdateStats(restoreValues);
             NotifyUserAboutStatsChange(lastValues);
 
-            if (!Benefits.VerifyBenefits())
-                Penalty.VerifyPenalty();
+            Benefits.VerifyStatus();
+            Penalty.VerifyStatus();
         }
 
         private static void UpdateStats((int _hunger, int _thirst) restoreValues)
@@ -120,8 +120,8 @@ namespace Survivalistic_Rebooted.Framework.Common
                 if (ModEntry.Data.ActualThirst >= 0)
                     ModEntry.Data.ActualThirst -= float.Parse(toolStatus[1]) * (BarsDatabase.ToolUseMultiplier * ModEntry.Config.ThirstOnActionMultiplier);
 
-                if (!Benefits.VerifyBenefits())
-                    Penalty.VerifyPenalty();
+                if (!Benefits.VerifyStatus())
+                    Penalty.VerifyStatus();
                 Helper.NormalizeStatus();
                 BarsWarnings.VerifyStatus();
             }

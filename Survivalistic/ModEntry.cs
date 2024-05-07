@@ -78,8 +78,8 @@ namespace Survivalistic_Rebooted
             BarsUpdate.CalculatePercentage();
             BarsWarnings.VerifyStatus();
 
-            if (!Benefits.VerifyBenefits())
-                Penalty.VerifyPenalty();
+            Benefits.VerifyStatus();
+            Penalty.VerifyStatus();
 
             NetController.Sync();
         }

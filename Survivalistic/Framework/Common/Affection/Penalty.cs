@@ -10,7 +10,7 @@ namespace Survivalistic_Rebooted.Framework.Common.Affection
     {
         private static bool _alreadyCheckedFaint;
 
-        public static void VerifyPenalty()
+        public static void VerifyStatus()
         {
             if (!Context.IsWorldReady) return;
 
@@ -28,20 +28,17 @@ namespace Survivalistic_Rebooted.Framework.Common.Affection
         public static void CheckValuesAndDealDamageIfReady()
         {
             if (!Context.IsWorldReady) return;
-            bool applyingHealthDamage = false;
 
+            bool applyingHealthDamage = ProceedHungerWork() | ProceedThirstWork();
+            TryToProceedExhaustedPenalties(applyingHealthDamage);
+        }
+
+        private static bool ProceedHungerWork()
+        {
+            var applyHPDamage = false;
             if (ModEntry.Data.ActualHunger <= 10)
             {
-                if (Game1.player.stamina > 0)
-                {
-                    Game1.player.stamina -= 15;
-                }
-                else
-                {
-                    Game1.player.health -= 10;
-                    applyingHealthDamage = true;
-                }
-
+                applyHPDamage = ApplyDamageToStaminaOrHP();
                 Buffs.CallUpdateSettingBuff(BuffsHelper.GetBuffIDByCode(Models.SurvivalisticBuffs.Codes.HungerDeBuff));
             }
             else
@@ -49,21 +46,15 @@ namespace Survivalistic_Rebooted.Framework.Common.Affection
                 Buffs.CallUpdateSettingBuff(BuffsHelper.GetBuffIDByCode(Models.SurvivalisticBuffs.Codes.HungerDeBuff), true);
             }
 
+            return applyHPDamage;
+        }
+
+        private static bool ProceedThirstWork()
+        {
+            var applyHPDamage = false;
             if (ModEntry.Data.ActualThirst <= 10)
             {
-                if (ModEntry.Data.ActualThirst <= 0)
-                {
-                    if (Game1.player.stamina > 0)
-                    {
-                        Game1.player.stamina -= 15;
-                    }
-                    else
-                    {
-                        Game1.player.health -= 10;
-                        applyingHealthDamage = true;
-                    }
-                }
-
+                applyHPDamage = ApplyDamageToStaminaOrHP();
                 Buffs.CallUpdateSettingBuff(BuffsHelper.GetBuffIDByCode(Models.SurvivalisticBuffs.Codes.ThirstDeBuff));
             }
             else
@@ -71,7 +62,11 @@ namespace Survivalistic_Rebooted.Framework.Common.Affection
                 Buffs.CallUpdateSettingBuff(BuffsHelper.GetBuffIDByCode(Models.SurvivalisticBuffs.Codes.ThirstDeBuff), true);
             }
 
+            return applyHPDamage;
+        }
 
+        private static void TryToProceedExhaustedPenalties(bool applyingHealthDamage)
+        {
             if (applyingHealthDamage)
             {
                 Game1.player.checkForExhaustion(Game1.player.Stamina);
@@ -81,6 +76,22 @@ namespace Survivalistic_Rebooted.Framework.Common.Affection
             {
                 Buffs.CallUpdateSettingBuff(BuffsHelper.GetBuffIDByCode(Models.SurvivalisticBuffs.Codes.FaintDeBuff), true);
             }
+        }
+
+        private static bool ApplyDamageToStaminaOrHP()
+        {
+            var applyHPDamage = false;
+            if (Game1.player.stamina > 0)
+            {
+                Game1.player.stamina -= 15;
+            }
+            else
+            {
+                Game1.player.health -= 10;
+                applyHPDamage = true;
+            }
+
+            return applyHPDamage;
         }
 
         public static void VerifyPassOut()
