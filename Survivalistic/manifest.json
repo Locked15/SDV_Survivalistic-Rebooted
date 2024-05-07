@@ -1,7 +1,7 @@
 ﻿{
     "Name": "Survivalistic (Rebooted)",
     "Author": "Ophaneom and Locked15",
-    "Version": "1.1.0-unofficial.3-Locked15",
+    "Version": "1.1.0-unofficial.4-Locked15",
     "Description": "Adds some survival odds to the game.",
     "UniqueID": "Ophaneom.Survivalistic",
     "EntryDll": "Survivalistic-Rebooted.dll",
