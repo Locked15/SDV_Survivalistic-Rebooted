@@ -10,6 +10,10 @@
 
         public static bool RightSide = false;
 
-        public static float ToolUseMultiplier = 0.25f;
+        /// <summary>
+        /// This modifier applies depending on your current status.
+        /// If your stats are low, tools are much (2.5F) more expensive to use.
+        /// </summary>
+        public static float AdditionalPostEffectToolUseMultiplier = 0.25f;
     }
 }
