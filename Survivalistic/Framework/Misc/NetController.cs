@@ -14,7 +14,7 @@ namespace Survivalistic_Rebooted.Framework.Misc
 
         private static readonly IManifest Manifest = ModEntry.Instance.ModManifest;
 
-        public static bool _firstLoad;
+        public static bool IsFirstLoad = true;
 
         public static void SyncSpecificPlayer(long player_id)
         {
@@ -67,10 +67,10 @@ namespace Survivalistic_Rebooted.Framework.Misc
                 if (Game1.IsMultiplayer) Debugger.Log($"Saving host Data.", "Trace");
 
                 Data _data = Helper.Data.ReadSaveData<Data>($"{Game1.player.UniqueMultiplayerID}") ?? new Data();
-                if (!_firstLoad)
+                if (IsFirstLoad)
                 {
                     ModEntry.Data = _data;
-                    _firstLoad = true;
+                    IsFirstLoad = false;
                 }
                 Helper.Data.WriteSaveData($"{Game1.player.UniqueMultiplayerID}", ModEntry.Data);
 
@@ -96,8 +96,6 @@ namespace Survivalistic_Rebooted.Framework.Misc
                 SyncBody _body = e.ReadAs<SyncBody>();
                 ModEntry.Data = _body.data;
                 Foods.FoodDatabase = _body.dict;
-                BarsDatabase.HungerVelocity = _body.multipliers[0];
-                BarsDatabase.ThirstVelocity = _body.multipliers[1];
 
                 Debugger.Log("Received important Data from host.", "Trace");
                 BarsUpdate.CalculatePercentage();

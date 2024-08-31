@@ -25,28 +25,28 @@ namespace Survivalistic_Rebooted.Framework.UI.Bars
                     BarPosition.X = GetXPositionForRightBottomCorner();
                     BarPosition.Y = _sizeUI.Y;
 
-                    BarsDatabase.RightSide = true;
+                    RuntimeAdditionalProperties.IsCurrentRenderTargetedToTheRightSide = true;
                     break;
 
                 case "bottom-left":
                     BarPosition.X = 70;
                     BarPosition.Y = _sizeUI.Y;
 
-                    BarsDatabase.RightSide = false;
+                    RuntimeAdditionalProperties.IsCurrentRenderTargetedToTheRightSide = false;
                     break;
 
                 case "middle-right":
                     BarPosition.X = _sizeUI.X - 56;
                     BarPosition.Y = _sizeUI.Y / 2 + 75;
 
-                    BarsDatabase.RightSide = true;
+                    RuntimeAdditionalProperties.IsCurrentRenderTargetedToTheRightSide = true;
                     break;
 
                 case "middle-left":
                     BarPosition.X = 70;
                     BarPosition.Y = _sizeUI.Y / 2 + 75;
 
-                    BarsDatabase.RightSide = false;
+                    RuntimeAdditionalProperties.IsCurrentRenderTargetedToTheRightSide = false;
                     break;
 
                 case "top-right":
@@ -54,7 +54,7 @@ namespace Survivalistic_Rebooted.Framework.UI.Bars
                     if (Game1.player.buffs.AppliedBuffs.Count > 0) BarPosition.Y = 325;
                     else BarPosition.Y = 290;
 
-                    BarsDatabase.RightSide = true;
+                    RuntimeAdditionalProperties.IsCurrentRenderTargetedToTheRightSide = true;
                     break;
 
                 case "top-left":
@@ -62,14 +62,14 @@ namespace Survivalistic_Rebooted.Framework.UI.Bars
                     if (CheckIfPlayerInDangerLocation()) BarPosition.Y = 320;
                     else BarPosition.Y = 260;
 
-                    BarsDatabase.RightSide = false;
+                    RuntimeAdditionalProperties.IsCurrentRenderTargetedToTheRightSide = false;
                     break;
 
                 default:
                     BarPosition.X = ModEntry.Config.BarsCustomX;
                     BarPosition.X = ModEntry.Config.BarsCustomY;
 
-                    BarsDatabase.RightSide = BarPosition.X >= _sizeUI.X / 2;
+                    RuntimeAdditionalProperties.IsCurrentRenderTargetedToTheRightSide = BarPosition.X >= _sizeUI.X / 2;
                     break;
             }
         }

@@ -1,9 +1,15 @@
-﻿using Survivalistic_Rebooted.Framework.UI.Bars;
+﻿using Survivalistic_Rebooted.Framework.Common.Affection;
+using Survivalistic_Rebooted.Framework.UI.Bars;
 
 namespace Survivalistic_Rebooted.Framework.Common
 {
     internal static class Helper
     {
+        public static void PerformBenefitsPenaltiesRoutineApplying()
+        {
+            if (!Benefits.VerifyStatus())
+                Penalties.VerifyStatus();
+        }
 
         public static void NormalizeStatus()
         {

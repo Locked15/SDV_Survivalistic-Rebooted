@@ -60,27 +60,23 @@ namespace Survivalistic_Rebooted
 
         private void OnReturnToTitle(object sender, ReturnedToTitleEventArgs e)
         {
-            NetController._firstLoad = false;
+            NetController.IsFirstLoad = false;
         }
 
         private void OnUpdate(object sender, UpdateTickedEventArgs e)
         {
             BarsPosition.SetBarsPosition();
 
-            Interaction.EatingCheck();
-            Interaction.UsingToolCheck();
+            Interaction.NeedsRestoration.PerformEatingCheckAndApplyEffectsIfPossible();
+            Interaction.NeedsConsumption.CheckDoesPlayerUseToolAndApplyEffectsIfRelevant();
             Interaction.UpdateTickInformation();
             Penalties.VerifyPassOut();
         }
 
         private void OnTimeChanged(object sender, TimeChangedEventArgs e)
         {
-            BarsUpdate.UpdateBarsProperties();
+            Interaction.NeedsConsumption.ApplyPassiveStatsDecreaseIfPossibleAndApplyEffectsIfRelevant();
             BarsUpdate.CalculatePercentage();
-            BarsWarnings.VerifyStatus();
-
-            Benefits.VerifyStatus();
-            Penalties.VerifyStatus();
 
             NetController.Sync();
         }
@@ -95,10 +91,12 @@ namespace Survivalistic_Rebooted
 
         private void OnSaveLoaded(object sender, SaveLoadedEventArgs e)
         {
-            if (!NetController._firstLoad) NetController.Sync();
-            Interaction.Awake();
+            if (NetController.IsFirstLoad) NetController.Sync();
+
+            Interaction.AwakeManager.Awake();
+            Interaction.AwakeManager.ReceiveAwakeInfo();
+
             NetController.Sync();
-            Interaction.ReceiveAwakeInfo();
             BarsUpdate.CalculatePercentage();
             BarsWarnings.VerifyStatus();
         }

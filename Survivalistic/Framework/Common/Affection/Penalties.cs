@@ -14,13 +14,13 @@ namespace Survivalistic_Rebooted.Framework.Common.Affection
         {
             if (!Context.IsWorldReady) return;
 
-            if (ModEntry.Data.ActualHunger <= 15 && ModEntry.Data.ActualHunger > 0) BarsDatabase.AdditionalPostEffectToolUseMultiplier = 1.5f;
-            else if (ModEntry.Data.ActualHunger <= 0) BarsDatabase.AdditionalPostEffectToolUseMultiplier = 2.5f;
-            else BarsDatabase.AdditionalPostEffectToolUseMultiplier = 1;
+            if (ModEntry.Data.ActualHunger <= 15 && ModEntry.Data.ActualHunger > 0) RuntimeAdditionalProperties.AdditionalPostEffectToolUseMultiplier = 1.5f;
+            else if (ModEntry.Data.ActualHunger <= 0) RuntimeAdditionalProperties.AdditionalPostEffectToolUseMultiplier = 2.5f;
+            else RuntimeAdditionalProperties.AdditionalPostEffectToolUseMultiplier = 1;
 
-            if (ModEntry.Data.ActualThirst <= 15 && ModEntry.Data.ActualThirst > 0) BarsDatabase.AdditionalPostEffectToolUseMultiplier = 1.5f;
-            else if (ModEntry.Data.ActualThirst <= 0) BarsDatabase.AdditionalPostEffectToolUseMultiplier = 2.5f;
-            else BarsDatabase.AdditionalPostEffectToolUseMultiplier = 1;
+            if (ModEntry.Data.ActualThirst <= 15 && ModEntry.Data.ActualThirst > 0) RuntimeAdditionalProperties.AdditionalPostEffectToolUseMultiplier = 1.5f;
+            else if (ModEntry.Data.ActualThirst <= 0) RuntimeAdditionalProperties.AdditionalPostEffectToolUseMultiplier = 2.5f;
+            else RuntimeAdditionalProperties.AdditionalPostEffectToolUseMultiplier = 1;
 
             CheckValuesAndDealDamageIfReady();
         }

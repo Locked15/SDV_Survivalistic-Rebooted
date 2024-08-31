@@ -25,12 +25,12 @@ namespace Survivalistic_Rebooted.Framework.UI
             e.SpriteBatch.Draw(Textures.ThirstFiller, new Vector2(BarsPosition.BarPosition.X - 24, BarsPosition.BarPosition.Y - 25), new Rectangle(0, 0, Textures.ThirstFiller.Width * 6 * Game1.pixelZoom, (int)BarsProperties.ThirstPercentage), BarsProperties.GetThirstBarColorWithOffset(), 3.138997f, new Vector2(0.5f, 0.5f), 1f, SpriteEffects.None, 1f);
 
             CheckMouseHovering();
-            if (BarsDatabase.RenderNumericalHunger)
+            if (RuntimeAdditionalProperties.ShouldRenderNumericalHungerValuesInCurrentCase)
             {
                 string information = $"{(int)ModEntry.Data.ActualHunger}/{(int)ModEntry.Data.MaxHunger}";
                 Vector2 textSize = Game1.dialogueFont.MeasureString(information);
                 Vector2 textPosition;
-                if (BarsDatabase.RightSide) textPosition = new Vector2(-12, textSize.X);
+                if (RuntimeAdditionalProperties.IsCurrentRenderTargetedToTheRightSide) textPosition = new Vector2(-12, textSize.X);
                 else textPosition = new Vector2(12 + Textures.HungerSprite.Width * 4, 0);
 
                 Game1.spriteBatch.DrawString(
@@ -45,12 +45,12 @@ namespace Survivalistic_Rebooted.Framework.UI
                     0f);
             }
 
-            if (BarsDatabase.RenderNumericalThirst)
+            if (RuntimeAdditionalProperties.ShouldRenderNumericalThirstValuesInCurrentCase)
             {
                 string information = $"{(int)ModEntry.Data.ActualThirst}/{(int)ModEntry.Data.MaxThirst}";
                 Vector2 text_size = Game1.dialogueFont.MeasureString(information);
                 Vector2 text_position;
-                if (BarsDatabase.RightSide) text_position = new Vector2(-12, text_size.X);
+                if (RuntimeAdditionalProperties.IsCurrentRenderTargetedToTheRightSide) text_position = new Vector2(-12, text_size.X);
                 else text_position = new Vector2(12 + Textures.HungerSprite.Width * 4, 0);
 
                 Game1.spriteBatch.DrawString(
@@ -93,12 +93,12 @@ namespace Survivalistic_Rebooted.Framework.UI
         {
             Vector2 mousePosition = new Vector2(Game1.getMousePosition(true).X, Game1.getMousePosition(true).Y);
 
-            BarsDatabase.RenderNumericalHunger = mousePosition.X >= BarsPosition.BarPosition.X &&
+            RuntimeAdditionalProperties.ShouldRenderNumericalHungerValuesInCurrentCase = mousePosition.X >= BarsPosition.BarPosition.X &&
                 mousePosition.X <= BarsPosition.BarPosition.X + Textures.HungerSprite.Width * 4 &&
                 mousePosition.Y >= BarsPosition.BarPosition.Y - 240 &&
                 mousePosition.Y <= BarsPosition.BarPosition.Y - 240 + Textures.HungerSprite.Height * 4;
 
-            BarsDatabase.RenderNumericalThirst = mousePosition.X >= BarsPosition.BarPosition.X - 60 &&
+            RuntimeAdditionalProperties.ShouldRenderNumericalThirstValuesInCurrentCase = mousePosition.X >= BarsPosition.BarPosition.X - 60 &&
                 mousePosition.X <= BarsPosition.BarPosition.X - 60 + Textures.HungerSprite.Width * 4 &&
                 mousePosition.Y >= BarsPosition.BarPosition.Y - 240 &&
                 mousePosition.Y <= BarsPosition.BarPosition.Y - 240 + Textures.HungerSprite.Height * 4;
