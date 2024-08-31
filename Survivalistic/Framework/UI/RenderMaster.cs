@@ -16,7 +16,7 @@ namespace Survivalistic_Rebooted.Framework.UI
     {
         public static void OnRenderingHud(object sender, RenderingHudEventArgs e)
         {
-            if (!Context.IsWorldReady || Game1.CurrentEvent != null) return;
+            if (!Context.IsWorldReady || !Game1.displayHUD || Game1.CurrentEvent != null) return;
 
             e.SpriteBatch.Draw(Textures.HungerSprite, new Rectangle((int)BarsPosition.BarPosition.X, (int)BarsPosition.BarPosition.Y - 240, Textures.HungerSprite.Width * 4, Textures.HungerSprite.Height * 4), Color.White);
             e.SpriteBatch.Draw(Textures.ThirstSprite, new Rectangle((int)BarsPosition.BarPosition.X - 60, (int)BarsPosition.BarPosition.Y - 240, Textures.ThirstSprite.Width * 4, Textures.ThirstSprite.Height * 4), Color.White);
