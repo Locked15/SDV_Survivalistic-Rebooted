@@ -1,7 +1,6 @@
-using Framework.Common;
+using Survivalistic_Rebooted.Framework.UI.Bars;
 using StardewModdingAPI;
 using StardewValley;
-using Survivalistic_Rebooted.Framework.Bars;
 using Survivalistic_Rebooted.Framework.Common.Affection;
 using Survivalistic_Rebooted.Framework.Databases;
 using System;
@@ -112,7 +111,7 @@ namespace Survivalistic_Rebooted.Framework.Common
 
             if (_hunger > 1 || _thirst > 1)
             {
-                var messageTemplate = _hunger > 1 ? ModEntry.Instance.Helper.Translation.Get("Info.Fullness.Restore") :
+                var messageTemplate = _hunger > 1 ? ModEntry.Instance.Helper.Translation.Get("Info.Hunger.Restore") :
                                                     ModEntry.Instance.Helper.Translation.Get("Info.Thirst.Restore");
                 var actualDiff = Math.Max(_hunger, _thirst);
 

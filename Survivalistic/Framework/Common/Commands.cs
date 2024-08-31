@@ -1,6 +1,6 @@
-﻿using StardewModdingAPI;
+﻿using Survivalistic_Rebooted.Framework.UI.Bars;
+using StardewModdingAPI;
 using StardewValley;
-using Survivalistic_Rebooted.Framework.Bars;
 using Survivalistic_Rebooted.Framework.Misc;
 
 namespace Survivalistic_Rebooted.Framework.Common
@@ -12,7 +12,7 @@ namespace Survivalistic_Rebooted.Framework.Common
         private const string _errorCommandIsWrong = "Command missing arguments!\nPlease check the command usage with:";
         private const string _errorMultiplayer = "That command only works on multiplayer!";
 
-        public static void Feed(string command, string[] args)
+        public static void RestoreHunger(string command, string[] args)
         {
             if (!Context.IsWorldReady) return;
             if (Context.IsMultiplayer)
@@ -58,7 +58,7 @@ namespace Survivalistic_Rebooted.Framework.Common
             }
         }
 
-        public static void Hydrate(string command, string[] args)
+        public static void RestoreThirst(string command, string[] args)
         {
             if (!Context.IsWorldReady) return;
             if (Context.IsMultiplayer)
@@ -104,7 +104,7 @@ namespace Survivalistic_Rebooted.Framework.Common
             }
         }
 
-        public static void Fullness(string command, string[] args)
+        public static void Sate(string command, string[] args)
         {
             if (!Context.IsWorldReady) return;
             if (Context.IsMultiplayer)

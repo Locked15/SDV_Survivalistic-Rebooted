@@ -1,31 +1,30 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Survivalistic_Rebooted.Framework.UI.Bars;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using StardewModdingAPI;
 using StardewModdingAPI.Events;
 using StardewValley;
 using StardewValley.Menus;
-using Survivalistic_Rebooted.Framework.Bars;
 using Survivalistic_Rebooted.Framework.Common;
 using Survivalistic_Rebooted.Framework.Databases;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Survivalistic_Rebooted.Framework.Misc
+namespace Survivalistic_Rebooted.Framework.UI
 {
-    public static class Renderer
+    public static class RenderMaster
     {
         public static void OnRenderingHud(object sender, RenderingHudEventArgs e)
         {
             if (!Context.IsWorldReady || Game1.CurrentEvent != null) return;
 
-            CheckMouseHovering();
-
             e.SpriteBatch.Draw(Textures.HungerSprite, new Rectangle((int)BarsPosition.BarPosition.X, (int)BarsPosition.BarPosition.Y - 240, Textures.HungerSprite.Width * 4, Textures.HungerSprite.Height * 4), Color.White);
             e.SpriteBatch.Draw(Textures.ThirstSprite, new Rectangle((int)BarsPosition.BarPosition.X - 60, (int)BarsPosition.BarPosition.Y - 240, Textures.ThirstSprite.Width * 4, Textures.ThirstSprite.Height * 4), Color.White);
 
-            e.SpriteBatch.Draw(Textures.HungerFiller, new Vector2(BarsPosition.BarPosition.X + 36, BarsPosition.BarPosition.Y - 25), new Rectangle(0, 0, Textures.HungerFiller.Width * 6 * Game1.pixelZoom, (int)BarsInformations.HungerPercentage), BarsInformations.GetHungerBarColorWithOffset(), 3.138997f, new Vector2(0.5f, 0.5f), 1f, SpriteEffects.None, 1f);
-            e.SpriteBatch.Draw(Textures.ThirstFiller, new Vector2(BarsPosition.BarPosition.X - 24, BarsPosition.BarPosition.Y - 25), new Rectangle(0, 0, Textures.ThirstFiller.Width * 6 * Game1.pixelZoom, (int)BarsInformations.ThirstPercentage), BarsInformations.GetThirstBarColorWithOffset(), 3.138997f, new Vector2(0.5f, 0.5f), 1f, SpriteEffects.None, 1f);
+            e.SpriteBatch.Draw(Textures.HungerFiller, new Vector2(BarsPosition.BarPosition.X + 36, BarsPosition.BarPosition.Y - 25), new Rectangle(0, 0, Textures.HungerFiller.Width * 6 * Game1.pixelZoom, (int)BarsProperties.HungerPercentage), BarsProperties.GetHungerBarColorWithOffset(), 3.138997f, new Vector2(0.5f, 0.5f), 1f, SpriteEffects.None, 1f);
+            e.SpriteBatch.Draw(Textures.ThirstFiller, new Vector2(BarsPosition.BarPosition.X - 24, BarsPosition.BarPosition.Y - 25), new Rectangle(0, 0, Textures.ThirstFiller.Width * 6 * Game1.pixelZoom, (int)BarsProperties.ThirstPercentage), BarsProperties.GetThirstBarColorWithOffset(), 3.138997f, new Vector2(0.5f, 0.5f), 1f, SpriteEffects.None, 1f);
 
+            CheckMouseHovering();
             if (BarsDatabase.RenderNumericalHunger)
             {
                 string information = $"{(int)ModEntry.Data.ActualHunger}/{(int)ModEntry.Data.MaxHunger}";
@@ -38,7 +37,7 @@ namespace Survivalistic_Rebooted.Framework.Misc
                     Game1.dialogueFont,
                     information,
                     new Vector2(BarsPosition.BarPosition.X + textPosition.X, BarsPosition.BarPosition.Y - 240 + Textures.HungerSprite.Height * 4 / 4 + 8),
-                    BarsInformations.GetHungerBarColorWithOffset(),
+                    BarsProperties.GetHungerBarColorWithOffset(),
                     0f,
                     new Vector2(textPosition.Y, 0),
                     1,
@@ -58,7 +57,7 @@ namespace Survivalistic_Rebooted.Framework.Misc
                     Game1.dialogueFont,
                     information,
                     new Vector2(BarsPosition.BarPosition.X - 60 + text_position.X, BarsPosition.BarPosition.Y - 240 + Textures.HungerSprite.Height * 4 / 4 + 8),
-                    BarsInformations.GetThirstBarColorWithOffset(),
+                    BarsProperties.GetThirstBarColorWithOffset(),
                     0f,
                     new Vector2(text_position.Y, 0),
                     1,
@@ -75,7 +74,7 @@ namespace Survivalistic_Rebooted.Framework.Misc
 
                     string actualString = "";
                     if (int.Parse(foodStatus[0]) > 0)
-                        actualString += string.Format(ModEntry.Instance.Helper.Translation.Get("Info.Fullness.Restore"), foodStatus[0]);
+                        actualString += string.Format(ModEntry.Instance.Helper.Translation.Get("Info.Hunger.Restore"), foodStatus[0]);
                     if (int.Parse(foodStatus[0]) > 0 && int.Parse(foodStatus[1]) > 0)
                         actualString += "\n";
                     if (int.Parse(foodStatus[1]) > 0)

@@ -1,7 +1,8 @@
-﻿using StardewModdingAPI;
+﻿using Survivalistic_Rebooted.Framework.UI;
+using Survivalistic_Rebooted.Framework.UI.Bars;
+using StardewModdingAPI;
 using StardewModdingAPI.Events;
 using Survivalistic_Rebooted.Framework.APIs;
-using Survivalistic_Rebooted.Framework.Bars;
 using Survivalistic_Rebooted.Framework.Common;
 using Survivalistic_Rebooted.Framework.Common.Affection;
 using Survivalistic_Rebooted.Framework.Databases;
@@ -35,13 +36,13 @@ namespace Survivalistic_Rebooted
             helper.Events.Multiplayer.PeerConnected += OnPlayerConnected;
             helper.Events.Multiplayer.ModMessageReceived += OnMessageReceived;
 
-            helper.Events.Display.RenderingHud += Renderer.OnRenderingHud;
-            //helper.Events.Display.RenderedActiveMenu += Renderer.OnActiveMenu;
+            helper.Events.Display.RenderingHud += RenderMaster.OnRenderingHud;
+            //helper.Events.Display.RenderedActiveMenu += RenderMaster.OnActiveMenu;
             helper.Events.GameLoop.ReturnedToTitle += OnReturnToTitle;
 
-            helper.ConsoleCommands.Add("survivalistic_feed", "Feeds a player.\nUsage: survivalistic_feed 'food_amount' 'player_name'", Commands.Feed);
-            helper.ConsoleCommands.Add("survivalistic_hydrate", "Hydrates a player.\nUsage: survivalistic_hydrate 'hydration_amount' 'player_name'", Commands.Hydrate);
-            helper.ConsoleCommands.Add("survivalistic_fullness", "Set full status to a player.\nUsage: survivalistic_fullness 'player_name'", Commands.Fullness);
+            helper.ConsoleCommands.Add("survivalistic_restore_hunger", "Feeds a player.\nUsage: survivalistic_restore_hunger 'food_amount' 'player_name'", Commands.RestoreHunger);
+            helper.ConsoleCommands.Add("survivalistic_restore_thirst", "Hydrates a player.\nUsage: survivalistic_restore_thirst 'hydration_amount' 'player_name'", Commands.RestoreThirst);
+            helper.ConsoleCommands.Add("survivalistic_sate", "Set full status to a player.\nUsage: survivalistic_sate 'player_name'", Commands.Sate);
             helper.ConsoleCommands.Add("survivalistic_forcesync", "Forces the synchronization in multiplayer to all players.\nUsage: survivalistic_forcesync", Commands.ForceSync);
 
             DBController.LoadDatabases();
@@ -74,7 +75,7 @@ namespace Survivalistic_Rebooted
 
         private void OnTimeChanged(object sender, TimeChangedEventArgs e)
         {
-            BarsUpdate.UpdateBarsInformation();
+            BarsUpdate.UpdateBarsProperties();
             BarsUpdate.CalculatePercentage();
             BarsWarnings.VerifyStatus();
 

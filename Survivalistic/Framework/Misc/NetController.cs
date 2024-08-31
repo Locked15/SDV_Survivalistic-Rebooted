@@ -1,7 +1,7 @@
-﻿using StardewModdingAPI;
+﻿using Survivalistic_Rebooted.Framework.UI.Bars;
+using StardewModdingAPI;
 using StardewModdingAPI.Events;
 using StardewValley;
-using Survivalistic_Rebooted.Framework.Bars;
 using Survivalistic_Rebooted.Framework.Common;
 using Survivalistic_Rebooted.Framework.Databases;
 using System.Collections.Generic;
@@ -10,9 +10,9 @@ namespace Survivalistic_Rebooted.Framework.Misc
 {
     public class NetController
     {
-        private static IModHelper Helper = ModEntry.Instance.Helper;
+        private static readonly IModHelper Helper = ModEntry.Instance.Helper;
 
-        private static IManifest Manifest = ModEntry.Instance.ModManifest;
+        private static readonly IManifest Manifest = ModEntry.Instance.ModManifest;
 
         public static bool _firstLoad;
 

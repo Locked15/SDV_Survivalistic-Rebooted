@@ -1,7 +1,7 @@
 ﻿using StardewModdingAPI;
 using StardewValley;
 
-namespace Survivalistic_Rebooted.Framework.Bars
+namespace Survivalistic_Rebooted.Framework.UI.Bars
 {
     public static class BarsWarnings
     {

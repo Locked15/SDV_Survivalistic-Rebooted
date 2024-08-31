@@ -2,7 +2,7 @@
 using StardewModdingAPI;
 using StardewValley;
 
-namespace Survivalistic_Rebooted.Framework.Bars
+namespace Survivalistic_Rebooted.Framework.UI.Bars
 {
     public static class BarsPosition
     {
@@ -37,14 +37,14 @@ namespace Survivalistic_Rebooted.Framework.Bars
 
                 case "middle-right":
                     BarPosition.X = _sizeUI.X - 56;
-                    BarPosition.Y = (_sizeUI.Y / 2) + 75;
+                    BarPosition.Y = _sizeUI.Y / 2 + 75;
 
                     BarsDatabase.RightSide = true;
                     break;
 
                 case "middle-left":
                     BarPosition.X = 70;
-                    BarPosition.Y = (_sizeUI.Y / 2) + 75;
+                    BarPosition.Y = _sizeUI.Y / 2 + 75;
 
                     BarsDatabase.RightSide = false;
                     break;
@@ -89,6 +89,6 @@ namespace Survivalistic_Rebooted.Framework.Bars
 
         private static bool CheckIfPlayerInDangerLocation() =>
                             _currentLocation.Contains("UndergroundMine") || _currentLocation.Contains("SkullCavern") ||
-                            (_currentLocation.Contains("VolcanoDungeon") && _currentLocation != "VolcanoDungeon0");
+                            _currentLocation.Contains("VolcanoDungeon") && _currentLocation != "VolcanoDungeon0";
     }
 }

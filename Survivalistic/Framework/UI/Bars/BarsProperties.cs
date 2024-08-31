@@ -1,10 +1,10 @@
-﻿using Framework.Common;
+﻿using Survivalistic_Rebooted.Framework.Common;
 using Microsoft.Xna.Framework;
 using System;
 
-namespace Survivalistic_Rebooted.Framework.Bars
+namespace Survivalistic_Rebooted.Framework.UI.Bars
 {
-    public class BarsInformations
+    public class BarsProperties
     {
         public static float HungerPercentage { get; set; }
 

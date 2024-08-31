@@ -1,7 +1,7 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Survivalistic_Rebooted.Framework.UI.Bars;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using StardewValley;
-using Survivalistic_Rebooted.Framework.Bars;
 using Survivalistic_Rebooted.Framework.Misc;
 using System.IO;
 
@@ -21,7 +21,7 @@ namespace Survivalistic_Rebooted.Framework.Common
         {
             get
             {
-                Color color = BarsInformations.GetHungerBarColorWithOffset();
+                Color color = BarsProperties.GetHungerBarColorWithOffset();
                 _hungerFiller.SetData(new[] { color });
 
                 return _hungerFiller;
@@ -37,7 +37,7 @@ namespace Survivalistic_Rebooted.Framework.Common
         {
             get
             {
-                Color color = BarsInformations.GetThirstBarColorWithOffset();
+                Color color = BarsProperties.GetThirstBarColorWithOffset();
                 _thirstFiller.SetData(new[] { color });
 
                 return _thirstFiller;

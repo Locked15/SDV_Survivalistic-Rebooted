@@ -1,7 +1,6 @@
-﻿using Survivalistic_Rebooted;
-using Survivalistic_Rebooted.Framework.Bars;
+﻿using Survivalistic_Rebooted.Framework.UI.Bars;
 
-namespace Framework.Common
+namespace Survivalistic_Rebooted.Framework.Common
 {
     internal static class Helper
     {

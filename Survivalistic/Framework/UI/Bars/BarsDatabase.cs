@@ -1,4 +1,4 @@
-﻿namespace Survivalistic_Rebooted.Framework.Bars
+﻿namespace Survivalistic_Rebooted.Framework.UI.Bars
 {
     public static class BarsDatabase
     {

@@ -1,6 +1,6 @@
 {
     /// Messages.
-    "Info.Fullness.Restore": "+{0} насыщения.",
+    "Info.Hunger.Restore": "+{0} насыщения.",
     "Info.Thirst.Restore": "+{0} утоления жажды.",
 
     // Warnings.

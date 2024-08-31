@@ -1,6 +1,6 @@
-﻿using StardewModdingAPI;
+﻿using Survivalistic_Rebooted.Framework.UI.Bars;
+using StardewModdingAPI;
 using StardewValley;
-using Survivalistic_Rebooted.Framework.Bars;
 using Survivalistic_Rebooted.Framework.Common.Effects;
 using Survivalistic_Rebooted.Framework.Misc;
 
