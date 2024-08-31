@@ -38,7 +38,7 @@ namespace Survivalistic_Rebooted.Models.Config
         public bool UseDynamicThirstBarColor { get; set; } = true;
 
         // COMPATIBILITY SETTINGS
-        public bool NonRecognizedFood { get; set; } = true;
+        public bool ApplyPropertiesToNonRecognizedFood { get; set; } = true;
 
         // GAMEPLAY SETTINGS
         public bool DecreaseValuesAfterSleep { get; set; }

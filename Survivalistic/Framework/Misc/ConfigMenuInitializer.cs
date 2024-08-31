@@ -161,10 +161,10 @@ namespace Survivalistic_Rebooted.Framework.Misc
 
             _configMenu.AddBoolOption(
                 mod: _modManifest,
-                name: () => _helper.Translation.Get("Setting.Compatibility.NonRecognizedFood.Title"),
-                tooltip: () => _helper.Translation.Get("Setting.Compatibility.NonRecognizedFood.Description"),
-                getValue: () => ActualConfig.NonRecognizedFood,
-                setValue: value => ActualConfig.NonRecognizedFood = value
+                name: () => _helper.Translation.Get("Setting.Compatibility.ApplyPropertiesToNonRecognizedFood.Title"),
+                tooltip: () => _helper.Translation.Get("Setting.Compatibility.ApplyPropertiesToNonRecognizedFood.Description"),
+                getValue: () => ActualConfig.ApplyPropertiesToNonRecognizedFood,
+                setValue: value => ActualConfig.ApplyPropertiesToNonRecognizedFood = value
             );
         }
 

@@ -6,7 +6,7 @@ using Survivalistic_Rebooted.Framework.Misc;
 
 namespace Survivalistic_Rebooted.Framework.Common.Affection
 {
-    public static class Penalty
+    public static class Penalties
     {
         private static bool _alreadyCheckedFaint;
 

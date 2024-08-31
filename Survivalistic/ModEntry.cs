@@ -69,7 +69,7 @@ namespace Survivalistic_Rebooted
             Interaction.EatingCheck();
             Interaction.UsingToolCheck();
             Interaction.UpdateTickInformation();
-            Penalty.VerifyPassOut();
+            Penalties.VerifyPassOut();
         }
 
         private void OnTimeChanged(object sender, TimeChangedEventArgs e)
@@ -79,7 +79,7 @@ namespace Survivalistic_Rebooted
             BarsWarnings.VerifyStatus();
 
             Benefits.VerifyStatus();
-            Penalty.VerifyStatus();
+            Penalties.VerifyStatus();
 
             NetController.Sync();
         }

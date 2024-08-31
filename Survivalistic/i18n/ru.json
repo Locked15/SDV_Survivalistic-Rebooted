@@ -66,8 +66,8 @@
     "Setting.Compatibility.Title": "Настройки Совместимости",
     "Setting.Compatibility.Description": "Включает или Отключает определенные настройки совместимости.",
 
-    "Setting.Compatibility.NonRecognizedFood.Title": "Несовместимая Еда",
-    "Setting.Compatibility.NonRecognizedFood.Description": "Если включено, мод будет автоматически создавать параметры насыщения для еды, не представленной в БД.",
+    "Setting.Compatibility.ApplyPropertiesToNonRecognizedFood.Title": "Несовместимая Еда",
+    "Setting.Compatibility.ApplyPropertiesToNonRecognizedFood.Description": "Если включено, мод будет автоматически создавать параметры насыщения для еды, не представленной в БД.",
 
     // Gameplay Settings.
     "Setting.Gameplay.SleepOptions.Title": "Настройки Сна",

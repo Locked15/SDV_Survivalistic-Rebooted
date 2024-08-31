@@ -65,8 +65,8 @@
     "Setting.Compatibility.Title": "Compatibilidade",
     "Setting.Compatibility.Description": "Ativa ou Desativa a compatibilidade com alguns mods.",
 
-    "Setting.Compatibility.NonRecognizedFood.Title": "Ativar 'Comidas nao-suportadas'.",
-    "Setting.Compatibility.NonRecognizedFood.Description": "Se estiver ativo, o mod ira criar valores para fome e sede para as comidas nao-suportadas.",
+    "Setting.Compatibility.ApplyPropertiesToNonRecognizedFood.Title": "Ativar 'Comidas nao-suportadas'.",
+    "Setting.Compatibility.ApplyPropertiesToNonRecognizedFood.Description": "Se estiver ativo, o mod ira criar valores para fome e sede para as comidas nao-suportadas.",
 
     // Gameplay Settings.
     "Setting.Gameplay.SleepOptions.Title": "Opcoes de Dormir",

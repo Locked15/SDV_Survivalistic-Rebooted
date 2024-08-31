@@ -81,7 +81,7 @@ namespace Survivalistic_Rebooted.Framework.Misc
                     if (int.Parse(foodStatus[1]) > 0)
                         actualString += string.Format(ModEntry.Instance.Helper.Translation.Get("Info.Thirst.Restore"), foodStatus[1]);
 
-                    string currentText = actualString;
+                    var currentText = actualString;
                     Vector2 textSize = Game1.smallFont.MeasureString(currentText);
                     SpriteBatch b = e.SpriteBatch;
                     IClickableMenu.drawTextureBox(b, Game1.menuTexture, new Rectangle(0, 256, 60, 60), (int)(sizeUI.X / 2) - (int)(textSize.X / 2 + 25), (int)sizeUI.Y - 125 - (int)(textSize.Y + 25), (int)(textSize.X + 50), (int)(textSize.Y + 40), Color.White * 1, 1, false, 1);

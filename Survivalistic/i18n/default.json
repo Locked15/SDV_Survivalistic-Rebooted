@@ -66,8 +66,8 @@
     "Setting.Compatibility.Title": "Compatibility Features",
     "Setting.Compatibility.Description": "Enables or disables compatibility mode for certain mods.",
 
-    "Setting.Compatibility.NonRecognizedFood.Title": "Allow Non-Recognized Food",
-    "Setting.Compatibility.NonRecognizedFood.Description": "If set to true, the mod will automatically assign values to consumed food items not present in the database. So you actually will restore Hunger and Thirst by consuming non-recognized by Survivalistic meals.",
+    "Setting.Compatibility.ApplyPropertiesToNonRecognizedFood.Title": "Allow Non-Recognized Food",
+    "Setting.Compatibility.ApplyPropertiesToNonRecognizedFood.Description": "If set to true, the mod will automatically assign values to consumed food items not present in the database. So you actually will restore Hunger and Thirst by consuming non-recognized by Survivalistic meals.",
 
     // Gameplay Settings.
     "Setting.Gameplay.SleepOptions.Title": "Sleep Options",

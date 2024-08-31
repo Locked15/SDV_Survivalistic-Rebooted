@@ -59,31 +59,43 @@ namespace Survivalistic_Rebooted.Framework.Common
             }
         }
 
-        private static void IncreaseStatus(SDVObject eatenFood)
+        private static void IncreaseStatus(SDVObject consumedMeal)
         {
             (float _hunger, float _thirst) lastValues = (ModEntry.Data.ActualHunger, ModEntry.Data.ActualThirst);
             (int _hunger, int _thirst) restoreValues = (0, 0);
 
-            if (Foods.FoodDatabase.TryGetValue(eatenFood.Name, out string foodStatusString))
+            if (Foods.FoodDatabase.TryGetValue(consumedMeal.Name, out string foodStatusString))
             {
                 List<string> foodStatus = foodStatusString.Split('/').ToList();
                 restoreValues = (int.Parse(foodStatus[0]), int.Parse(foodStatus[1]));
             }
-            else if (ModEntry.Config.NonRecognizedFood)
+            else if (ModEntry.Config.ApplyPropertiesToNonRecognizedFood)
             {
-                // TODO: Revamp this.
-                // Well, this is a temporary solution.
-                var isDrink = true;
+                var isDrink = CheckIsConsumedItemIsDrink(consumedMeal.GetContextTags());
 
-                if (isDrink) restoreValues._thirst = eatenFood.Edibility;
-                if (isDrink) restoreValues._hunger = eatenFood.Edibility;
+                if (isDrink) restoreValues._thirst = consumedMeal.Edibility;
+                if (!isDrink) restoreValues._hunger = consumedMeal.Edibility;
             }
 
             UpdateStats(restoreValues);
             NotifyUserAboutStatsChange(lastValues);
 
             Benefits.VerifyStatus();
-            Penalty.VerifyStatus();
+            Penalties.VerifyStatus();
+        }
+
+        /// <summary>
+        /// Checks item context tags to contain "Drinking" ones.
+        /// May not always return correct result because sometimes even drinking meals don't have relevant categories (like 'Truffle Oil').
+        /// </summary>
+        /// <param name="contextTags">Context tags of the target item.</param>
+        /// <returns>Boolean value is this meal drink or not.</returns>
+        private static bool CheckIsConsumedItemIsDrink(IEnumerable<string> contextTags)
+        {
+            var isClearDrinkItem = contextTags.Contains("drink_item");
+            var isSyrupItem = contextTags.Contains("category_syrup");
+
+            return isClearDrinkItem || isSyrupItem;
         }
 
         private static void UpdateStats((int _hunger, int _thirst) restoreValues)
@@ -121,7 +133,7 @@ namespace Survivalistic_Rebooted.Framework.Common
                     ModEntry.Data.ActualThirst -= float.Parse(toolStatus[1]) * (BarsDatabase.ToolUseMultiplier * ModEntry.Config.ThirstOnActionMultiplier);
 
                 if (!Benefits.VerifyStatus())
-                    Penalty.VerifyStatus();
+                    Penalties.VerifyStatus();
                 Helper.NormalizeStatus();
                 BarsWarnings.VerifyStatus();
             }
